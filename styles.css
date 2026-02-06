@@ -1,12 +1,12 @@
 :root {
-  --bg: #0b1020;
-  --card: #141b31;
-  --text: #f5f7ff;
-  --muted: #9aa6c9;
-  --accent: #5f7bff;
-  --accent-2: #38d9c0;
-  --accent-3: #f6b94c;
-  --border: rgba(255, 255, 255, 0.08);
+  --bg: #f5f4ff;
+  --card: #ffffff;
+  --text: #1a1d2e;
+  --muted: #5a6075;
+  --accent: #766ee9;
+  --accent-2: #4f8bff;
+  --accent-3: #f5a94a;
+  --border: rgba(118, 110, 233, 0.12);
 }
 
 * {
@@ -41,7 +41,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(11, 16, 32, 0.95);
+  background: rgba(245, 244, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -97,12 +97,12 @@ a {
 
 .primary-btn {
   background: linear-gradient(120deg, var(--accent), var(--accent-2));
-  color: #071024;
-  box-shadow: 0 12px 30px rgba(95, 123, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(118, 110, 233, 0.28);
 }
 
 .secondary-btn {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(118, 110, 233, 0.08);
   color: var(--text);
   border: 1px solid var(--border);
 }
@@ -110,7 +110,7 @@ a {
 .ghost-btn {
   background: transparent;
   color: var(--text);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(118, 110, 233, 0.2);
 }
 
 .primary-btn:hover,
@@ -136,8 +136,8 @@ a {
   gap: 8px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(95, 123, 255, 0.15);
-  color: var(--accent-2);
+  background: rgba(118, 110, 233, 0.12);
+  color: var(--accent);
   font-size: 0.85rem;
   margin-bottom: 20px;
 }
@@ -179,7 +179,7 @@ a {
   border-radius: 24px;
   padding: 28px;
   border: 1px solid var(--border);
-  box-shadow: 0 20px 40px rgba(5, 10, 20, 0.4);
+  box-shadow: 0 20px 40px rgba(23, 28, 60, 0.12);
 }
 
 .card-top {
@@ -193,7 +193,7 @@ a {
 .badge {
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(56, 217, 192, 0.2);
+  background: rgba(79, 139, 255, 0.15);
   color: var(--accent-2);
   font-weight: 600;
 }
@@ -208,7 +208,7 @@ a {
   padding: 16px;
   border-radius: 16px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(118, 110, 233, 0.04);
 }
 
 .stack-item h3 {
@@ -256,6 +256,7 @@ a {
   padding: 24px;
   border-radius: 20px;
   border: 1px solid var(--border);
+  box-shadow: 0 18px 30px rgba(118, 110, 233, 0.1);
 }
 
 .feature-card h3,
@@ -272,12 +273,18 @@ a {
 .plugin-card a {
   display: inline-block;
   margin-top: 16px;
-  color: var(--accent-2);
+  color: var(--accent);
   font-weight: 600;
 }
 
+.plugin-card img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+}
+
 .muted {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(118, 110, 233, 0.06);
 }
 
 .platforms-grid {
@@ -300,17 +307,17 @@ a {
   gap: 4px;
   padding: 12px 16px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(118, 110, 233, 0.06);
   border: 1px solid var(--border);
 }
 
 .platform-list a {
-  color: var(--accent-2);
+  color: var(--accent);
   font-weight: 600;
 }
 
 .qr-card {
-  background: linear-gradient(135deg, rgba(95, 123, 255, 0.2), rgba(246, 185, 76, 0.18));
+  background: linear-gradient(135deg, rgba(118, 110, 233, 0.18), rgba(245, 169, 74, 0.18));
   border-radius: 24px;
   padding: 28px;
   border: 1px solid var(--border);
@@ -332,11 +339,12 @@ a {
 }
 
 .qr-grid div {
-  background: rgba(11, 16, 32, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 16px;
   padding: 16px;
   text-align: center;
   border: 1px solid var(--border);
+  box-shadow: 0 12px 20px rgba(118, 110, 233, 0.12);
 }
 
 .qr-grid span {
@@ -347,7 +355,7 @@ a {
 }
 
 .gradient {
-  background: radial-gradient(circle at top, rgba(95, 123, 255, 0.25), transparent 60%);
+  background: radial-gradient(circle at top, rgba(118, 110, 233, 0.22), transparent 60%);
 }
 
 .support-grid {
@@ -365,7 +373,7 @@ a {
 }
 
 .support-card {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(118, 110, 233, 0.05);
   border-radius: 20px;
   padding: 24px;
   border: 1px solid var(--border);
@@ -378,14 +386,14 @@ a {
 }
 
 .social-links a {
-  color: var(--accent-3);
+  color: var(--accent);
   font-weight: 600;
 }
 
 .contact-block {
   padding: 14px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(118, 110, 233, 0.08);
   border: 1px solid var(--border);
   display: grid;
   gap: 6px;
