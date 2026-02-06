@@ -182,20 +182,12 @@ a {
   box-shadow: 0 20px 40px rgba(23, 28, 60, 0.12);
 }
 
-.card-top {
-  display: flex;
-  justify-content: space-between;
-  color: var(--muted);
+.hero-illustration {
+  width: 100%;
+  border-radius: 18px;
   margin-bottom: 20px;
-  font-size: 0.9rem;
-}
-
-.badge {
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(30, 180, 120, 0.15);
-  color: #1aa46b;
-  font-weight: 600;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 30px rgba(118, 110, 233, 0.12);
 }
 
 .card-stack {
