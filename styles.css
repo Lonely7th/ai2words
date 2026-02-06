@@ -193,8 +193,8 @@ a {
 .badge {
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(79, 139, 255, 0.15);
-  color: var(--accent-2);
+  background: rgba(30, 180, 120, 0.15);
+  color: #1aa46b;
   font-weight: 600;
 }
 
@@ -389,11 +389,46 @@ a {
   display: flex;
   gap: 16px;
   margin: 16px 0 20px;
+  flex-wrap: wrap;
 }
 
 .social-links a {
   color: var(--accent);
   font-weight: 600;
+}
+
+.wechat-trigger {
+  position: relative;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wechat-popover {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 24px rgba(118, 110, 233, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  width: 150px;
+}
+
+.wechat-popover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wechat-trigger:hover .wechat-popover {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .contact-block {
