@@ -41,7 +41,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(245, 244, 255, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -60,13 +60,9 @@ a {
   gap: 12px;
 }
 
-.brand img:first-child {
-  width: 40px;
-  height: 40px;
-}
-
-.brand img:last-child {
-  height: 26px;
+.brand img {
+  width: 200px;
+  height: 48px;
 }
 
 .nav-links {
@@ -457,7 +453,7 @@ a {
 }
 
 .footer-grid img {
-  height: 28px;
+  height: 44px;
   margin-bottom: 12px;
 }
 
@@ -485,4 +481,193 @@ a {
   .card-footer {
     flex-direction: column;
   }
+}
+
+/* 兼容性表格样式 */
+.compatibility-section {
+  background: var(--card);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 18px 30px rgba(118, 110, 233, 0.08);
+}
+
+.compatibility-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 600px;
+}
+
+.compatibility-table th,
+.compatibility-table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.compatibility-table th {
+  background: rgba(118, 110, 233, 0.05);
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.compatibility-table tr:last-child td {
+  border-bottom: none;
+}
+
+.compatibility-table tbody tr:hover {
+  background: rgba(118, 110, 233, 0.02);
+}
+
+.compatibility-table td:first-child,
+.compatibility-table th:first-child {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* 移动端适配 */
+@media (max-width: 640px) {
+  .compatibility-table th,
+  .compatibility-table td {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* 常见问题模块样式 */
+#faq {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.faq-category {
+  background: rgba(118, 110, 233, 0.02);
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 30px rgba(118, 110, 233, 0.08);
+}
+
+.faq-category-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  color: var(--text);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  border-left: 3px solid rgba(118, 110, 233, 0.3);
+  padding-left: 16px;
+}
+
+.faq-question {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.faq-question::before {
+  content: "Q";
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: var(--accent);
+  color: white;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.faq-answer br {
+  margin-bottom: 6px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .faq-category {
+    padding: 20px;
+  }
+
+  .faq-category-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* 关键词标签组样式 */
+.keyword-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.keyword-tag {
+  display: inline-block;
+  background: rgba(118, 110, 233, 0.12);
+  color: var(--accent);
+  padding: 6px 18px;
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  cursor: default;
+  backdrop-filter: blur(2px);
+}
+
+.keyword-tag:hover {
+  background: rgba(118, 110, 233, 0.2);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(118, 110, 233, 0.15);
 }
