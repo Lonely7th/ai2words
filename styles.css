@@ -98,7 +98,7 @@ a {
 }
 
 .secondary-btn {
-  background: rgba(118, 110, 233, 0.08);
+  background: transparent;
   color: var(--text);
   border: 1px solid var(--border);
 }
