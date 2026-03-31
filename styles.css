@@ -117,6 +117,7 @@ a {
 
 .hero {
   padding: 80px 0 80px;
+  background-color: #fff;
 }
 
 .hero-grid {
@@ -130,9 +131,9 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(118, 110, 233, 0.12);
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: rgba(118, 110, 233, 0.1);
   color: var(--accent);
   font-size: 0.85rem;
   margin-bottom: 20px;
@@ -653,10 +654,10 @@ a {
 
 .keyword-tag {
   display: inline-block;
-  background: rgba(118, 110, 233, 0.12);
+  background: rgba(118, 110, 233, 0.05);
   color: var(--accent);
-  padding: 6px 18px;
-  border-radius: 40px;
+  padding: 10px 18px;
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
   transition: all 0.2s ease;
