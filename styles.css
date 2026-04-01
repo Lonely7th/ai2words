@@ -372,6 +372,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 .plugin-icon img {
   width: 44px;
   height: 44px;
+  border-radius: 8px;
 }
 
 .plugin-card-new h3 {
@@ -575,7 +576,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 40px;
 }
 
 .keyword {
@@ -749,7 +750,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 
 .social-icons a, .wechat-trigger-new {
   color: var(--accent);
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
   position: relative;
 }
@@ -789,14 +790,13 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
   background: white;
   border-radius: var(--radius-md);
   padding: 16px 20px;
-  border-left: 4px solid var(--accent);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .contact-email strong {
-  font-family: monospace;
+  /* font-family: monospace; */
   color: var(--text-dark);
 }
 
@@ -838,7 +838,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
   margin-bottom: 12px;
   color: #b0c4e7;
   transition: var(--transition);
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
 .footer-links a:hover {
@@ -848,7 +848,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 
 .copyright {
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 13px;
   padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.08);
   color: #8ba5c9;
