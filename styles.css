@@ -1,17 +1,17 @@
-/* ========== 全新设计系统：鲸鱼AI助手 2.0（优化版） ========== */
+/* ========== 全新设计系统：鲸鱼AI助手 · 紫韵白调 ========== */
 :root {
   --bg-primary: #ffffff;
-  --bg-secondary: #f8fafd;
+  --bg-secondary: #faf9ff;
   --bg-glass: rgba(255, 255, 255, 0.85);
   --text-dark: #0a2540;
   --text-muted: #5f6c80;
-  --accent: #2b6ef0;
-  --accent-dark: #1a56d6;
-  --accent-glow: rgba(43, 110, 240, 0.2);
-  --border-light: #e9edf2;
+  --accent: #766EE9;          /* 主色调：优雅紫罗兰 */
+  --accent-dark: #5e54c9;     /* 加深紫 */
+  --accent-glow: rgba(118, 110, 233, 0.2);
+  --border-light: #edeef2;
   --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.02);
   --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 25px 45px -12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 25px 45px -12px rgba(118, 110, 233, 0.15);
   --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 32px;
@@ -112,7 +112,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(43, 110, 240, 0.3);
+  box-shadow: 0 12px 24px rgba(118, 110, 233, 0.35);
 }
 
 .btn-large {
@@ -153,7 +153,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 /* ========== Hero 区域 ========== */
 .hero {
   padding: 80px 0 100px;
-  background: linear-gradient(145deg, #ffffff 0%, #fafcff 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #fbfaff 100%);
   position: relative;
   overflow: hidden;
 }
@@ -167,7 +167,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 
 .badge-glow {
   display: inline-block;
-  background: rgba(43, 110, 240, 0.1);
+  background: rgba(118, 110, 233, 0.12);
   padding: 6px 16px;
   border-radius: 60px;
   font-size: 0.75rem;
@@ -179,12 +179,12 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
-  background: linear-gradient(135deg, #0a2540, #1e4a8f);
+  background: linear-gradient(135deg, #0a2540, #4a3db3);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -312,7 +312,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 }
 
 .modern-table th {
-  background: #f9fbfd;
+  background: #f9f8ff;
   padding: 18px 20px;
   font-weight: 600;
   color: var(--text-dark);
@@ -322,7 +322,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 
 .modern-table td {
   padding: 14px 20px;
-  border-bottom: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f0f5;
   color: var(--text-muted);
 }
 
@@ -331,7 +331,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 }
 
 .modern-table tbody tr:hover td {
-  background: #fafcff;
+  background: #fdfbff;
 }
 
 /* ========== 插件卡片网格 ========== */
@@ -355,13 +355,13 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 .plugin-card-new:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(43, 110, 240, 0.2);
+  border-color: rgba(118, 110, 233, 0.2);
 }
 
 .plugin-icon {
   width: 70px;
   height: 70px;
-  background: #f0f4fe;
+  background: #f1efff;
   border-radius: 24px;
   display: flex;
   align-items: center;
@@ -401,7 +401,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 
 /* ========== 多端支持（双栏渐变） ========== */
 .section-gradient-alt {
-  background: linear-gradient(105deg, #f7faff 0%, #ffffff 100%);
+  background: linear-gradient(105deg, #fbfaff 0%, #ffffff 100%);
 }
 
 .platforms-modern {
@@ -453,7 +453,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
   border-color: var(--accent);
 }
 
-/* 二维码区域 - 优化放大与美观 */
+/* 二维码区域 - 放大美观 */
 .qr-modern {
   background: white;
   border-radius: var(--radius-lg);
@@ -466,7 +466,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 
 .qr-modern:hover {
   transform: translateY(-4px);
-  box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 30px 50px -20px rgba(118, 110, 233, 0.2);
 }
 
 .qr-title {
@@ -547,7 +547,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 .feature-icon {
   width: 64px;
   height: 64px;
-  background: #eff4ff;
+  background: #f1efff;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -579,7 +579,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 }
 
 .keyword {
-  background: #f0f4fe;
+  background: #f1efff;
   padding: 8px 20px;
   border-radius: 60px;
   font-size: 0.75rem;
@@ -724,7 +724,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 }
 
 .social-card {
-  background: #fafcff;
+  background: #fbfaff;
   border-radius: var(--radius-lg);
   padding: 32px;
   border: 1px solid var(--border-light);
