@@ -170,7 +170,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
   background: rgba(118, 110, 233, 0.12);
   padding: 6px 16px;
   border-radius: 60px;
-  font-size: 0.75rem;
+  font-size: 15px;
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 24px;
@@ -259,7 +259,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 }
 
 .stack-row span {
-  font-size: 0.8rem;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -289,6 +289,7 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
   color: var(--text-muted);
   max-width: 680px;
   margin: 0 auto;
+  font-size: 17px;
 }
 
 /* ========== 兼容性表格（玻璃态） ========== */
@@ -441,12 +442,14 @@ a:hover, button:hover, .btn-primary:hover, .btn-outline:hover, .btn-ghost:hover 
 }
 
 .platform-item span {
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .platform-item a {
   color: var(--accent);
   font-weight: 500;
+  font-size: 16px;
 }
 
 .platform-item:hover {
