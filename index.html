@@ -19,7 +19,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
-  <!-- 简单favicon (文字模拟) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EA2%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -56,7 +55,7 @@
           <p class="hero-sub">兼容DeepSeek、豆包、ChatGPT、Gemini、Kimi等主流AI平台。LaTeX数学公式、物理化学式、Mermaid流程图无损转换，保留全部排版。隐私优先，全端通用。</p>
           <div class="hero-actions">
             <a href="https://www.aiwhaler.com/" class="btn-primary-large" target="_blank" rel="noreferrer"><i class="fas fa-cloud-upload-alt"></i> 网页端在线转换</a>
-            <a href="#download" class="btn-outline-large"><i class="fas fa-mobile-alt"></i> 下载App/小程序</a>
+            <a href="#download" class="btn-outline-large"><i class="fas fa-mobile-alt"></i> 下载 App</a>
           </div>
           <div class="trust-badge">
             <span><i class="fas fa-check-circle"></i> 已服务10万+用户</span>
@@ -156,16 +155,15 @@
       </div>
     </section>
 
-    <!-- 全端支持 + 二维码 · 左右交错布局 -->
+    <!-- 全端支持 + App下载 (已移除小程序，仅保留App) -->
     <section id="platforms" class="section-spacing bg-gradient-light">
       <div class="container platforms-dual">
         <div class="platforms-content">
           <h2>全渠道覆盖，随时随地导出文档</h2>
-          <p class="platforms-desc">网页端、手机App、微信小程序、浏览器插件——无论您使用哪种设备，AI2Word都能提供一致的转换体验。</p>
+          <p class="platforms-desc">网页端、手机App、浏览器插件——无论您使用哪种设备，AI2Word都能提供一致的转换体验。</p>
           <div class="platform-icons">
             <div class="pf-item"><i class="fas fa-laptop"></i> 网页版</div>
             <div class="pf-item"><i class="fab fa-apple"></i> iOS/安卓</div>
-            <div class="pf-item"><i class="fab fa-weixin"></i> 小程序</div>
             <div class="pf-item"><i class="fas fa-puzzle-piece"></i> 插件</div>
           </div>
           <img class="platform-mockup" src="https://7365-seekservice-9gkeeztlfcb2a6d4-1301441002.tcb.qcloud.la/web_res/logo-2026-04-01-006.png?sign=7559bf7e9a6dcdb996e9ed793d5d4d61&t=1775034574" alt="AI2Word多端展示" style="max-width:80%; border-radius:24px; margin-top:24px;" />
@@ -173,20 +171,18 @@
         <div id="download" class="qr-panel-new">
           <div class="qr-header">
             <i class="fas fa-qrcode"></i>
-            <span>扫码即用</span>
+            <span>扫码下载 App</span>
           </div>
-          <p>App与小程序二维码，快速体验移动端转换。</p>
-          <div class="qr-duo">
+          <p>扫描二维码下载AI2Word手机App，随时随地进行转换。</p>
+          <div class="qr-duo" style="justify-content: center;">
             <div class="qr-block">
               <img src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-01/lowcode-2421725" alt="AI2Word App" />
-              <span>📱 App下载</span>
-            </div>
-            <div class="qr-block">
-              <img src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2403874" alt="AI2Word 小程序" />
-              <span>🧩 小程序</span>
+              <span>📱 点击或扫码下载</span>
             </div>
           </div>
-          <div class="qr-footer-note">微信/浏览器扫码</div>
+          <div class="qr-footer-note">
+            <a href="https://apps.apple.com/cn/app/ai2word-ai%E8%BD%AC%E6%8D%A2%E5%8A%A9%E6%89%8B/id6753907237" target="_blank" class="appstore-link">App Store 下载 <i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
       </div>
     </section>
@@ -216,7 +212,7 @@
           <div class="benefit-card">
             <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
             <h3>全端通用</h3>
-            <p>网页/App/小程序/插件数据互通，一次转换，多端同步查看。</p>
+            <p>网页/App/插件数据互通，一次转换，多端同步查看。</p>
           </div>
         </div>
         <div class="keyword-strip">
@@ -225,12 +221,12 @@
       </div>
     </section>
 
-    <!-- FAQ · 全新双栏卡片设计 (内容保留原意) -->
+    <!-- FAQ · 全新双栏卡片设计 (已移除“操作指南”分类，保留功能介绍与文件转换问题) -->
     <section id="faq" class="section-spacing bg-soft-gray">
       <div class="container">
         <div class="section-header-left">
           <h2>功能介绍与常见问题</h2>
-          <p>AI2Word 核心功能、操作指引与高频问题解答。</p>
+          <p>AI2Word 核心功能与高频问题解答，原站问答均已完整保留。</p>
         </div>
         <div id="faq-modern-container" class="faq-modern-grid"></div>
       </div>
@@ -289,25 +285,28 @@
 
   <script>
     (function() {
-      // 保持原有FAQ数据，但渲染为全新双栏样式
+      // 保留功能介绍(cat3)和文件转换问题(cat2)，移除操作指南(cat1)
       const faqData = {
         questions: [
+          // 功能介绍
           { id: 592, categoryId: 3, title: "AI2Word 可以做什么？", answer: "AI2Word 可将DeepSeek、豆包、Kimi、Gemini等AI生成的LaTeX公式、表格、Markdown文本一键转为Word、PDF、Excel，解决复制乱码问题。" },
           { id: 591, categoryId: 3, title: "AI生成的公式如何复制到Word？", answer: "AI工具生成的公式多为LaTeX格式，直接复制会乱码。使用AI2Word粘贴内容，点击转换即可下载排版工整的Word文档。" },
           { id: 590, categoryId: 3, title: "如何在线将LaTeX公式转Word？", answer: "访问AI2Word官网，将LaTeX代码粘贴到输入框，点击转换即可。支持复杂公式，转换后可编辑。" },
           { id: 595, categoryId: 3, title: "支持LaTeX表格转Word吗？", answer: "支持。LaTeX表格、Markdown表格均可转换为Word可编辑表格，保留合并单元格等结构。" },
           { id: 596, categoryId: 3, title: "Markdown内容如何转Word？", answer: "粘贴Markdown文本或上传.md文件，AI2Word自动识别语法并生成规范Word文档。" },
-          { id: 51, title: "LaTeX公式乱码", answer: "AI2Word支持全部LaTeX数学/物理/化学公式。若出现乱码，请联系客服，1个工作日内修复。", categoryId: 2 },
-          { id: 89, title: "公式出现虚线方框", answer: "部分特殊符号转换后出现虚线框，点击虚线框后按空格即可去除。", categoryId: 2 },
-          { id: 4, title: "小程序预览公式不显示", answer: "微信小程序预览可能无法显示公式，建议使用WPS预览或分享到电脑端查看。", categoryId: 2 },
-          { id: 3, title: "转换成Excel无内容", answer: "AI2Word自动匹配表格，若文案不含标准表格可能导致空文件。", categoryId: 2 },
-          { id: 5, title: "Html格式文案转换异常", answer: "AI2Word默认支持Markdown，Html格式可能导致异常，建议对话时要求AI以Markdown回复。", categoryId: 2 },
-          { id: 6, title: "Mermaid流程图生成失败", answer: "请检查Mermaid语法，AI2Word会自动修复常见格式问题。", categoryId: 2 },
-          { id: 40, title: "DeepSeek网页端用户", answer: "1.与DeepSeek对话生成内容。\n2.点击DeepSeek自带的复制按钮（不要全选）。\n3.粘贴到AI2Word导出Word/PDF。", categoryId: 1 },
-          { id: 41, title: "DeepSeek手机端用户", answer: "1.对话时要求“使用markdown格式返回并用markdown标签包裹”。\n2.点击markdown区块右上角复制。\n3.粘贴到AI2Word导出。", categoryId: 1 },
-          { id: 48, title: "Gemini/GPT手机端用户", answer: "1.对话时要求“使用markdown格式返回并用markdown标签包裹”。\n2.点击复制按钮。\n3.粘贴到AI2Word导出。", categoryId: 1 }
+          { id: 4, title: "隐私保护相关", answer: "AI2Word承诺保护您的隐私，仅在必要情况下，您在AI2Word中产生的文件和数据会进行加密存储，且您随时可以永久删除这些文件和数据。", categoryId: 3 },
+          // 文件转换问题
+          { id: 51, title: "LaTeX公式乱码", answer: "AI2Word支持所有的LaTeX数学公式、物理公式和化学方程式。如果您导出的内容中出现了公式错乱，请联系在线客服反馈给我们，我们会在1个工作日内修复问题。", categoryId: 2 },
+          { id: 89, title: "LaTeX公式出现虚线方框", answer: "对于某些特殊的数学符号，转换后会出现虚线方框，如果您想要去除这些虚线方框，可先用鼠标点击虚线方框，然后使用键盘输入空格即可。", categoryId: 2 },
+          { id: 4, title: "小程序端预览文件时，公式不显示", answer: "微信小程序端预览文件时，可能会出现公式无法正常展示的情况，如果您的文件中包含公式，请使用WPS预览文件，或将文件分享到电脑端进行预览。详情请咨询客服。", categoryId: 2 },
+          { id: 3, title: "转换成Excel文件无内容", answer: "AI2Word会自动匹配文案中的表格，如果您的文案中不包含表格，或文案格式不标准，则可能会导致生成的文件内容为空。", categoryId: 2 },
+          { id: 5, title: "Html格式文案转换异常", answer: "AI2Word默认支持的文案格式为Markdown，Html格式的文案会导致转换异常，由此，建议您与AI对话时，不要要求AI以Html的格式回复内容。", categoryId: 2 },
+          { id: 6, title: "Mermaid流程图生成失败", answer: "请优先检查您的数据格式，数据格式错误是导致流程图无法正常生成的主要原因。AI2Word会自动帮您修复常见的格式问题，对于少量不太常见的格式问题，可联系在线客服进行处理。", categoryId: 2 }
         ],
-        categories: [{ id: 1, title: "操作指南" }, { id: 2, title: "文件转换问题" }, { id: 3, title: "功能介绍" }]
+        categories: [
+          { id: 2, title: "文件转换问题" },
+          { id: 3, title: "功能介绍" }
+        ]
       };
       const container = document.getElementById('faq-modern-container');
       if(container) {
@@ -319,7 +318,8 @@
           if(cat.items.length === 0) continue;
           html += `<div class="faq-category-block"><div class="category-title">${cat.title}</div>`;
           cat.items.forEach(item => {
-            html += `<div class="faq-entry"><div class="faq-question"><i class="fas fa-question-circle"></i> ${item.title}</div><div class="faq-answer">${item.answer.replace(/\n/g,'<br>')}</div></div>`;
+            let answerHtml = item.answer.replace(/\n/g, '<br>');
+            html += `<div class="faq-entry"><div class="faq-question"><i class="fas fa-question-circle"></i> ${item.title}</div><div class="faq-answer">${answerHtml}</div></div>`;
           });
           html += '</div>';
         }
