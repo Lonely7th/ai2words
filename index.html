@@ -1,416 +1,332 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-
-  <meta property="og:title" content="AI转换助手 - AI对话转Word">
-  <meta property="og:description"
-    content="AI对话转Word、Markdown转Word、LaTeX转Word一站完成。兼容DeepSeek、Kimi、千问、豆包、ChatGPT、Gemini、Grok等主流AI平台，支持LaTeX公式和Mermaid图。 隐私安全，全端通用，专家级技术团队全程支持，最专业的AI对话导出工具。">
-  <meta property="og:site_name" content="AI转换助手">
-  <meta property="og:url" content="https://www.aitoword.chat/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="zh_CN">
-
-  <meta name="keywords" content="AI对话转Word,LaTeX转Word,Markdown转Word,兼容主流AI平台,Markdown转Excel,AI内容转Word,AI内容转PDF">
-  <link rel="canonical" href="https://www.aitoword.chat/">
-
-  <title>AI转换助手 - AI对话转Word | LaTeX公式转Word | Markdown转Word</title>
-  <meta name="description"
-    content="AI对话转Word、Markdown转Word、LaTeX转Word一站完成。兼容DeepSeek、Kimi、千问、豆包、ChatGPT、Gemini、Grok等主流AI平台，支持LaTeX公式和Mermaid图。 隐私安全，全端通用，专家级技术团队全程支持，最专业的AI对话导出工具。" />
-  <link rel="icon"
-    href="https://7365-seekservice-9gkeeztlfcb2a6d4-1301441002.tcb.qcloud.la/docxai-logo-3.png?sign=53048c33e478b4bd6f70a441f5f65bfc&t=1774510155" />
-  <link rel="apple-touch-icon"
-    href="https://7365-seekservice-9gkeeztlfcb2a6d4-1301441002.tcb.qcloud.la/docxai-logo-3.png?sign=53048c33e478b4bd6f70a441f5f65bfc&t=1774510155" />
+  <meta property="og:title" content="AI2Word - AI对话转Word专家" />
+  <meta property="og:description" content="AI2Word —— 专注AI对话转Word、Markdown转Word、LaTeX转Word。兼容DeepSeek、豆包、ChatGPT、Gemini等主流AI，公式/Mermaid图完美保留。隐私安全，全端通用。" />
+  <meta property="og:site_name" content="AI2Word" />
+  <meta property="og:url" content="https://www.ai2word.chat/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="keywords" content="AI2Word,AI对话转Word,LaTeX转Word,Markdown转Word,AI内容转PDF,AI导出Word" />
+  <link rel="canonical" href="https://www.ai2word.chat/" />
+  <title>AI2Word · AI对话转Word | LaTeX公式转Word | Markdown一键导出</title>
+  <meta name="description" content="AI2Word —— 将DeepSeek、豆包、ChatGPT、Kimi等AI生成的对话、LaTeX公式、Mermaid图完美转为Word/PDF/Excel。隐私安全，多端支持，专家级转换体验。" />
+  <!-- 字体与图标库 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- 简单favicon (文字模拟) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EA2%3C/text%3E%3C/svg%3E" />
 </head>
-
 <body>
-
-  <!-- 全新设计的头部：毛玻璃+精致边框 -->
+  <!-- 全新头部：双行布局 + 轻量模糊 -->
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img
-          src="https://7365-seekservice-9gkeeztlfcb2a6d4-1301441002.tcb.qcloud.la/web_res/logo-2026-04-01-006.png?sign=7559bf7e9a6dcdb996e9ed793d5d4d61&t=1775034574"
-          alt="AI转换助手" />
+    <div class="container header-container">
+      <div class="brand-area">
+        <a href="#" class="logo-link">
+          <div class="logo-icon"><i class="fas fa-file-word"></i></div>
+          <span class="logo-text">AI2Word</span>
+        </a>
+        <span class="badge-experimental">专业版</span>
       </div>
-      <nav class="nav-links">
+      <nav class="main-nav">
         <a href="#features">产品优势</a>
-        <a href="#platforms">全端通用</a>
-        <a href="#plugins">浏览器插件</a>
+        <a href="#platforms">全端覆盖</a>
+        <a href="#plugins">插件生态</a>
         <a href="#support">帮助中心</a>
       </nav>
-      <a class="btn-primary" href="https://www.aiwhaler.com/" target="_blank" rel="noreferrer">立即使用</a>
+      <div class="header-actions">
+        <a href="https://www.aiwhaler.com/" class="btn-header-outline" target="_blank" rel="noreferrer">登录</a>
+        <a href="https://www.aiwhaler.com/" class="btn-header-primary" target="_blank" rel="noreferrer">立即使用 <i class="fas fa-arrow-right"></i></a>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero 区域：全新不对称网格 + 浮动装饰元素 -->
-    <section class="hero">
-      <div class="container hero-wrapper">
-        <div class="hero-content">
-          <span class="badge-glow">✨ AI转换助手 - 最专业的AI对话导出工具</span>
-          <h1 class="hero-title">AI 对话一键导出<br>Word、PDF、Excel文档</h1>
-          <p class="hero-description">
-            兼容DeepSeek、豆包、ChatGPT、Gemini等主流AI平台，支持LaTeX数学公式、物理公式、化学方程式、Mermaid流程图，完整保留格式排版，快速导出Word、PDF、Excel文档，隐私安全，全端通用，专家级技术团队全程支持
-          </p>
-          <div class="hero-buttons">
-            <a class="btn-primary btn-large" href="https://www.aiwhaler.com/" target="_blank"
-              rel="noreferrer">网页端在线使用</a>
-            <a class="btn-outline" href="#download">下载 App</a>
-            <a class="btn-ghost" href="#plugins">安装插件</a>
+    <!-- HERO · 全新错层设计：左边文字 + 右边交互卡片 -->
+    <section class="hero-new">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="hero-chip"><i class="fas fa-bolt"></i> 专注AI内容导出 · 格式精准还原</div>
+          <h1 class="hero-headline">AI对话转Word<br>像复制粘贴一样简单</h1>
+          <p class="hero-sub">兼容DeepSeek、豆包、ChatGPT、Gemini、Kimi等主流AI平台。LaTeX数学公式、物理化学式、Mermaid流程图无损转换，保留全部排版。隐私优先，全端通用。</p>
+          <div class="hero-actions">
+            <a href="https://www.aiwhaler.com/" class="btn-primary-large" target="_blank" rel="noreferrer"><i class="fas fa-cloud-upload-alt"></i> 网页端在线转换</a>
+            <a href="#download" class="btn-outline-large"><i class="fas fa-mobile-alt"></i> 下载App/小程序</a>
+          </div>
+          <div class="trust-badge">
+            <span><i class="fas fa-check-circle"></i> 已服务10万+用户</span>
+            <span><i class="fas fa-shield-alt"></i> 数据加密存储</span>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="floating-card">
-            <img class="feature-preview" src="images/lowcode-2451411.png" alt="AI转换助手交付能力展示" />
-            <div class="feature-stack">
-              <div class="stack-row">
-                <div class="stack-icon">📄</div>
-                <div><strong>AI对话转Word</strong><span>一键导出，内容精准，排版工整</span></div>
-              </div>
-              <div class="stack-row">
-                <div class="stack-icon">📐</div>
-                <div><strong>支持LaTeX公式</strong><span>数学公式·物理公式·化学方程式</span></div>
-              </div>
-              <div class="stack-row">
-                <div class="stack-icon">🌐</div>
-                <div><strong>全端通用</strong><span>在线网页/App/微信小程序/浏览器插件</span></div>
-              </div>
+        <div class="hero-visual-card">
+          <div class="conversion-preview">
+            <div class="preview-header">
+              <span class="preview-dot"></span>
+              <span class="preview-dot"></span>
+              <span class="preview-dot"></span>
+              <span>AI2Word · 实时转换预览</span>
+            </div>
+            <div class="preview-body">
+              <div class="file-badge"><i class="fas fa-robot"></i> DeepSeek 对话</div>
+              <div class="arrow-animation"><i class="fas fa-long-arrow-alt-right"></i></div>
+              <div class="file-badge word-badge"><i class="fas fa-file-word"></i> 科研报告.docx</div>
+            </div>
+            <div class="preview-detail">
+              <div class="detail-item"><i class="fas fa-square-root-alt"></i> LaTeX公式: <code>E = mc^2</code> → 完美渲染</div>
+              <div class="detail-item"><i class="fas fa-project-diagram"></i> Mermaid流程图: 自动识别</div>
+              <div class="detail-item"><i class="fas fa-table"></i> 表格样式: 保留合并单元格</div>
+            </div>
+          </div>
+          <!-- 装饰浮动 -->
+          <div class="float-badge"><i class="fas fa-check"></i> 支持20+ AI平台</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 兼容性测评 · 全新卡片表格 (蓝白风格) -->
+    <section id="compatibility" class="section-spacing bg-soft-gray">
+      <div class="container">
+        <div class="section-header-left">
+          <h2>主流AI平台兼容性测评 <span class="highlight-badge">实时更新</span></h2>
+          <p>截止2026.02 · AI2Word 针对各大AI平台Markdown导出能力深度测评，专业团队持续优化。</p>
+        </div>
+        <div class="table-wrapper-modern">
+          <table class="compatibility-table">
+            <thead>
+              <tr><th>AI平台</th><th>Markdown(无公式)</th><th>Markdown(有公式)</th><th>Mermaid图</th><th>复杂表格</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>DeepSeek</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+              <tr><td>豆包</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+              <tr><td>Kimi</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-partial">部分支持</span></td><td><span class="badge-partial">部分支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+              <tr><td>通义千问</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-partial">部分支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+              <tr><td>智谱清言</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-partial">部分支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+              <tr><td>ChatGPT</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+              <tr><td>Gemini</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+              <tr><td>Grok</td><td><span class="badge-full">完全支持</span></td><td><span class="badge-partial">部分支持</span></td><td><span class="badge-full">完全支持</span></td><td><span class="badge-full">完全支持</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note"><i class="fas fa-flask"></i> 测评基于AI2Word引擎v3.0，持续适配最新AI输出格式。</p>
+      </div>
+    </section>
+
+    <!-- 插件生态 · 横向滚动卡片 + 全新布局 -->
+    <section id="plugins" class="section-spacing">
+      <div class="container">
+        <div class="section-header-center">
+          <h2>浏览器插件生态 · 一键导出</h2>
+          <p>针对各大AI平台推出专用插件，体验更流畅，兼容性更强。</p>
+        </div>
+        <div class="plugin-showcase">
+          <div class="plugin-featured">
+            <div class="plugin-icon-large"><i class="fas fa-puzzle-piece"></i></div>
+            <h3>AI2Word 通用插件</h3>
+            <p>一键将AI Markdown、LaTeX公式转为Word/PDF/Excel，适配DeepSeek、豆包、ChatGPT等几乎所有主流AI。</p>
+            <a href="https://www.aiwhaler.com/plugin/" class="plugin-link" target="_blank">安装插件 <i class="fas fa-external-link-alt"></i></a>
+          </div>
+          <div class="plugin-mini-grid">
+            <div class="plugin-mini-card">
+              <i class="fab fa-bots" style="color:#2563eb"></i>
+              <span>DeepSeek 插件</span>
+              <a href="https://deepseek.aiwhaler.com/" target="_blank">体验 →</a>
+            </div>
+            <div class="plugin-mini-card">
+              <i class="fas fa-comment-dots" style="color:#10b981"></i>
+              <span>豆包插件</span>
+              <a href="https://doubao.aiwhaler.com/" target="_blank">体验 →</a>
+            </div>
+            <div class="plugin-mini-card">
+              <i class="fab fa-google" style="color:#f97316"></i>
+              <span>Gemini 插件</span>
+              <a href="https://gemini.aiwhaler.com/" target="_blank">体验 →</a>
+            </div>
+            <div class="plugin-mini-card">
+              <i class="fab fa-openai" style="color:#10a37f"></i>
+              <span>ChatGPT 插件</span>
+              <a href="https://chatgpt.aiwhaler.com/" target="_blank">体验 →</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 兼容性测评 全新卡片式表格 -->
-    <section id="compatibility" class="section section-light">
-      <div class="container">
-        <div class="section-header">
-          <h2>主流AI平台兼容性测评</h2>
-          <p>截止2026年02月02日，AI转换助手 对各大主流 AI 平台的 Markdown 转 Word 能力测评</p>
-        </div>
-        <div class="glass-table">
-          <div class="table-responsive">
-            <table class="modern-table">
-              <thead>
-                <tr>
-                  <th>AI平台</th>
-                  <th>Markdown(无公式)</th>
-                  <th>Markdown(有公式)</th>
-                  <th>Markdown(有Mermaid图)</th>
-                  <th>Markdown(无Mermaid图)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>DeepSeek</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                </tr>
-                <tr>
-                  <td>豆包</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                </tr>
-                <tr>
-                  <td>Kimi</td>
-                  <td>完全支持</td>
-                  <td>部分支持</td>
-                  <td>部分支持</td>
-                  <td>完全支持</td>
-                </tr>
-                <tr>
-                  <td>通义千问</td>
-                  <td>完全支持</td>
-                  <td>部分支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                </tr>
-                <tr>
-                  <td>智谱清言</td>
-                  <td>完全支持</td>
-                  <td>部分支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                </tr>
-                <tr>
-                  <td>ChatGPT</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                </tr>
-                <tr>
-                  <td>Gemini</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                </tr>
-                <tr>
-                  <td>Grok</td>
-                  <td>完全支持</td>
-                  <td>部分支持</td>
-                  <td>完全支持</td>
-                  <td>完全支持</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 插件生态 卡片全新布局 + 悬浮动效 -->
-    <section id="plugins" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>浏览器插件生态</h2>
-          <p>AI转换助手针对各大主流 AI 平台推出了专用插件，服务更专业，兼容性更强</p>
-        </div>
-        <div class="plugin-card-new">
-          <div class="plugin-icon"><img src="images/ai2word-logo.png" alt="DeepSeek 插件 Logo" /></div>
-          <h3>通用版插件</h3>
-          <p>一键将AI生成的 Markdown 内容和 Latex 公式导出为 Word、PDF、Excel 文档，支持 DeepSeek、豆包、ChatGPT、Gemini 等主流AI平台</p>
-          <a href="https://www.aiwhaler.com/plugin/" target="_blank" rel="noreferrer">立即体验 →</a>
-        </div>
-        <div class="plugin-grid">
-          <div class="plugin-card-new">
-            <div class="plugin-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2411744"
-                alt="DeepSeek 插件 Logo" /></div>
-            <h3>DeepSeek 插件</h3>
-            <p>AI对话一键转文档</p>
-            <a href="https://deepseek.aiwhaler.com/" target="_blank" rel="noreferrer">立即体验 →</a>
-          </div>
-          <div class="plugin-card-new">
-            <div class="plugin-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2411736"
-                alt="豆包插件 Logo" /></div>
-            <h3>豆包插件</h3>
-            <p>LaTeX公式不乱码</p>
-            <a href="https://doubao.aiwhaler.com/" target="_blank" rel="noreferrer">立即体验 →</a>
-          </div>
-          <div class="plugin-card-new">
-            <div class="plugin-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-01/lowcode-2421671"
-                alt="Gemini 插件 Logo" /></div>
-            <h3>Gemini 插件</h3>
-            <p>支持各种复杂Mermaid图</p>
-            <a href="https://gemini.aiwhaler.com/" target="_blank" rel="noreferrer">立即体验 →</a>
-          </div>
-          <div class="plugin-card-new">
-            <div class="plugin-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-01/lowcode-2421670"
-                alt="ChatGPT 插件 Logo" /></div>
-            <h3>ChatGPT 插件</h3>
-            <p>全程支持，数据安全</p>
-            <a href="https://chatgpt.aiwhaler.com/" target="_blank" rel="noreferrer">立即体验 →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 多端支持 + 二维码 全新左右布局，视觉重构 -->
-    <section id="platforms" class="section section-gradient-alt">
-      <div class="container platforms-modern">
-        <div class="platforms-info">
+    <!-- 全端支持 + 二维码 · 左右交错布局 -->
+    <section id="platforms" class="section-spacing bg-gradient-light">
+      <div class="container platforms-dual">
+        <div class="platforms-content">
           <h2>全渠道覆盖，随时随地导出文档</h2>
-          <p>网页、App、小程序与浏览器插件全覆盖，为不同使用场景提供一致体验。</p>
-          <img class="feature-preview" src="images/lowcode-2451410.png" alt="AI转换助手交付能力展示" />
-        </div>
-        <div id="download" class="qr-modern">
-          <div class="qr-title">扫码使用</div>
-          <p>App 与小程序二维码快速获取。</p>
-          <div class="qr-dual">
-            <div class="qr-item"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-01/lowcode-2421725"
-                alt="AI转换助手App二维码" /><span>App 下载</span></div>
-            <div class="qr-item"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2403874"
-                alt="AI转换助手小程序二维码" /><span>小程序</span></div>
+          <p class="platforms-desc">网页端、手机App、微信小程序、浏览器插件——无论您使用哪种设备，AI2Word都能提供一致的转换体验。</p>
+          <div class="platform-icons">
+            <div class="pf-item"><i class="fas fa-laptop"></i> 网页版</div>
+            <div class="pf-item"><i class="fab fa-apple"></i> iOS/安卓</div>
+            <div class="pf-item"><i class="fab fa-weixin"></i> 小程序</div>
+            <div class="pf-item"><i class="fas fa-puzzle-piece"></i> 插件</div>
           </div>
+          <img class="platform-mockup" src="https://7365-seekservice-9gkeeztlfcb2a6d4-1301441002.tcb.qcloud.la/web_res/logo-2026-04-01-006.png?sign=7559bf7e9a6dcdb996e9ed793d5d4d61&t=1775034574" alt="AI2Word多端展示" style="max-width:80%; border-radius:24px; margin-top:24px;" />
         </div>
-      </div>
-    </section>
-
-    <!-- 产品优势 全新卡片与关键词标签整合 -->
-    <section id="features" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>为什么选择 AI转换助手？</h2>
-        </div>
-        <div class="features-grid">
-          <div class="feature-item">
-            <div class="feature-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-02/lowcode-2424003"
-                alt="数据安全" /></div>
-            <h3>隐私安全</h3>
-            <p>对接云数据安全系统，全面保障您的信息隐私与数据安全。</p>
+        <div id="download" class="qr-panel-new">
+          <div class="qr-header">
+            <i class="fas fa-qrcode"></i>
+            <span>扫码即用</span>
           </div>
-          <div class="feature-item">
-            <div class="feature-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-02/lowcode-2424006"
-                alt="全程支持" /></div>
-            <h3>全程支持</h3>
-            <p>专家级技术团队全程在线支持，随时解决您的疑难问题。</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-02/lowcode-2424004"
-                alt="持续升级" /></div>
-            <h3>持续升级</h3>
-            <p>专业研发团队持续迭代产品功能，不断提升产品的兼容性。</p>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon"><img
-                src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-02/lowcode-2424005"
-                alt="多端通用" /></div>
-            <h3>多端通用</h3>
-            <p>在线网页、App、小程序、浏览器插件通用，满足您对不同场景使用需求。</p>
-          </div>
-        </div>
-        <div class="keyword-cloud">
-          <span class="keyword">AI对话转Word</span><span class="keyword">LaTeX转Word</span><span
-            class="keyword">Markdown转Word</span><span class="keyword">兼容主流AI平台</span><span
-            class="keyword">Markdown转Excel</span><span class="keyword">AI内容转Word</span><span
-            class="keyword">AI内容转PDF</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ 模块 全新折叠面板风格 (内容完全一致) -->
-    <section id="faq" class="section section-faq">
-      <div class="container">
-        <div class="section-header">
-          <h2>功能介绍与常见问题</h2>
-          <p>AI转换助手 的主要功能、操作指南、以及您在使用过程中常见的问题，这里都有详细解答</p>
-        </div>
-        <div id="faq-accordion" class="faq-accordion-container"></div>
-      </div>
-    </section>
-
-    <!-- 支持团队 全新双栏 -->
-    <section id="support" class="section support-new">
-      <div class="container support-flex">
-        <div class="support-left">
-          <h2>专业技术团队全程支持</h2>
-          <p>专业技术团队为您全程护航，不断提升您的使用体验。</p>
-          <div class="support-actions">
-            <a class="btn-outline-light" href="https://www.aiwhaler.com/help/" target="_blank" rel="noreferrer">帮助中心</a>
-            <a class="btn-outline-light" href="https://www.aiwhaler.com/ua/" target="_blank" rel="noreferrer">用户协议</a>
-            <a class="btn-outline-light" href="https://www.aiwhaler.com/pp/" target="_blank" rel="noreferrer">隐私政策</a>
-          </div>
-        </div>
-        <div class="support-right">
-          <div class="social-card">
-            <h3>关注我们</h3>
-            <p>关注 AI转换助手，获取最前沿的AI资讯</p>
-            <div class="social-icons">
-              <a href="https://www.zhihu.com/people/33-44-73-12-10" target="_blank" rel="noreferrer">知乎</a>
-              <span class="wechat-trigger-new">微信公众号
-                <span class="wechat-qr-popup"><img
-                    src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2403880"
-                    alt="公众号二维码" /></span>
-              </span>
-              <a href="https://www.xiaohongshu.com/user/profile/64b5fb93000000000b014f78?xsec_token=YBs9EIHtVuIMv2UWOAIHM7QhzUi7QojCZ7lUKYCObpTHU=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=N0tGMzVLOTw2NzUyOTgwNjY0OTc5R0g7&apptime=1759463311&share_id=caa6c636cc1f49269fd532deb81e2d7a"
-                target="_blank" rel="noreferrer">小红书</a>
+          <p>App与小程序二维码，快速体验移动端转换。</p>
+          <div class="qr-duo">
+            <div class="qr-block">
+              <img src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2026-01/lowcode-2421725" alt="AI2Word App" />
+              <span>📱 App下载</span>
             </div>
-            <div class="contact-email"><span>联系邮箱</span><strong>aiwhaler@yeah.net</strong></div>
+            <div class="qr-block">
+              <img src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2403874" alt="AI2Word 小程序" />
+              <span>🧩 小程序</span>
+            </div>
           </div>
+          <div class="qr-footer-note">微信/浏览器扫码</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品优势 · 带图标与描述，全新排列 -->
+    <section id="features" class="section-spacing">
+      <div class="container">
+        <div class="section-header-center">
+          <h2>为什么选择 AI2Word ？</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-lock"></i></div>
+            <h3>隐私安全</h3>
+            <p>对接云安全体系，文件加密存储，您可随时永久删除数据，安心使用。</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-headset"></i></div>
+            <h3>专家全程支持</h3>
+            <p>技术团队在线响应，疑难格式、特殊公式，1对1协助解决。</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-sync-alt"></i></div>
+            <h3>持续升级</h3>
+            <p>紧跟AI平台更新，每月迭代，确保最新版Markdown/LaTeX完美兼容。</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>全端通用</h3>
+            <p>网页/App/小程序/插件数据互通，一次转换，多端同步查看。</p>
+          </div>
+        </div>
+        <div class="keyword-strip">
+          <span>AI对话转Word</span><span>LaTeX转Word</span><span>Markdown转Word</span><span>AI内容转PDF</span><span>Mermaid图支持</span><span>表格无损</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ · 全新双栏卡片设计 (内容保留原意) -->
+    <section id="faq" class="section-spacing bg-soft-gray">
+      <div class="container">
+        <div class="section-header-left">
+          <h2>功能介绍与常见问题</h2>
+          <p>AI2Word 核心功能、操作指引与高频问题解答。</p>
+        </div>
+        <div id="faq-modern-container" class="faq-modern-grid"></div>
+      </div>
+    </section>
+
+    <!-- 支持团队 + 社交 -->
+    <section id="support" class="section-spacing">
+      <div class="container support-split">
+        <div class="support-info">
+          <h2>专业技术团队全程护航</h2>
+          <p>提升转换体验，我们一直在努力。遇到任何问题，可通过以下方式联系我们。</p>
+          <div class="support-links-group">
+            <a href="https://www.aiwhaler.com/help/" class="support-link-btn" target="_blank"><i class="fas fa-book"></i> 帮助中心</a>
+            <a href="https://www.aiwhaler.com/ua/" class="support-link-btn" target="_blank"><i class="fas fa-file-contract"></i> 用户协议</a>
+            <a href="https://www.aiwhaler.com/pp/" class="support-link-btn" target="_blank"><i class="fas fa-shield-alt"></i> 隐私政策</a>
+          </div>
+        </div>
+        <div class="social-connect-card">
+          <h3><i class="fas fa-share-alt"></i> 关注AI2Word</h3>
+          <div class="social-links-row">
+            <a href="https://www.zhihu.com/people/33-44-73-12-10" target="_blank"><i class="fab fa-zhihu"></i> 知乎</a>
+            <span class="wechat-hover-trigger"> <i class="fab fa-weixin"></i> 公众号
+              <span class="wechat-qr-pop"><img src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2403880" alt="公众号二维码" /></span>
+            </span>
+            <a href="#" target="_blank"><i class="fab fa-xiaohongshu"></i> 小红书</a>
+          </div>
+          <div class="email-line"><i class="fas fa-envelope"></i> aiwhaler@yeah.net</div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand"><img
-          src="https://7365-seekservice-9gkeeztlfcb2a6d4-1301441002.tcb.qcloud.la/web_res/logo-2026-04-01-007.png?sign=e9c46b33f7ccac625ccbc00eb0544f15&t=1775035500"
-          alt="AI转换助手" />
-        <p style="font-size: 17px;">专家级的 AI 文案导出工具</p>
+  <footer class="footer-new">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><i class="fas fa-file-word"></i> AI2Word</div>
+        <p>专家级AI文案导出工具</p>
       </div>
-      <div class="footer-links">
-        <h4>产品</h4><a href="#features">产品优势</a><a href="#platforms">全端支持</a><a href="#plugins">插件生态</a>
+      <div class="footer-col">
+        <h4>产品</h4>
+        <a href="#features">产品优势</a><a href="#platforms">全端支持</a><a href="#plugins">插件生态</a>
       </div>
-      <div class="footer-links">
-        <h4>服务</h4><a href="https://www.aiwhaler.com/help/" target="_blank" rel="noreferrer">帮助中心</a><a
-          href="https://www.aiwhaler.com/ua/" target="_blank" rel="noreferrer">用户协议</a><a
-          href="https://www.aiwhaler.com/pp/" target="_blank" rel="noreferrer">隐私政策</a>
+      <div class="footer-col">
+        <h4>服务</h4>
+        <a href="https://www.aiwhaler.com/help/">帮助中心</a><a href="https://www.aiwhaler.com/ua/">用户协议</a><a href="https://www.aiwhaler.com/pp/">隐私政策</a>
       </div>
-      <div class="footer-links">
-        <h4>关注我们</h4><a href="https://www.zhihu.com/people/33-44-73-12-10" target="_blank" rel="noreferrer">知乎</a><a
-          href="https://www.xiaohongshu.com/user/profile/64b5fb93000000000b014f78?xsec_token=YBs9EIHtVuIMv2UWOAIHM7QhzUi7QojCZ7lUKYCObpTHU=&xsec_source=app_share&xhsshare=CopyLink&shareRedId=N0tGMzVLOTw2NzUyOTgwNjY0OTc5R0g7&apptime=1759463311&share_id=caa6c636cc1f49269fd532deb81e2d7a"
-          target="_blank" rel="noreferrer">小红书</a><a
-          href="https://www.douyin.com/user/MS4wLjABAAAABp8XqktGdCTIBd9gexYpg2AvXDGUhnJkmkj9J9zhR7GNMPfJEsQixwJRlf9d10Ah"
-          target="_blank" rel="noreferrer">抖音</a>
+      <div class="footer-col">
+        <h4>关注</h4>
+        <a href="#">知乎</a><a href="#">小红书</a><a href="#">抖音</a>
       </div>
     </div>
-    <p class="copyright">Copyright © 2018 - 2026 AI转换助手版权所有 <a href="https://beian.miit.gov.cn/" target="_blank"
-        rel="noreferrer">湘ICP备2024045717号-7</a></p>
+    <div class="copyright-bar">
+      <p>© 2018 - 2026 AI2Word 版权所有 <a href="https://beian.miit.gov.cn/">湘ICP备2024045717号-7</a></p>
+    </div>
   </footer>
 
   <script>
-    (function () {
-      // 完全保持原始 FAQ 数据，但渲染方式改为优雅的折叠卡片(全部展开保持内容可见)
+    (function() {
+      // 保持原有FAQ数据，但渲染为全新双栏样式
       const faqData = {
         questions: [
-          { id: 592, categoryId: 3, title: "AI转换助手 可以做什么？", answer: "AI转换助手 可以将 DeepSeek、豆包、Kimi、Gemini、千问、ChatGPT、文心等主流 AI 生成的 LaTeX 数学公式、复杂表格、Markdown 文本一键转换为 Word、PDF、Excel 文档，解决复制到 Word 后格式乱码的问题。" },
-          { id: 591, categoryId: 3, title: "AI 生成的公式如何复制到 Word 文档？", answer: "AI工具（例如：DeepSeek、豆包、ChatGPT、Gemini）生成的公式通常是LaTeX格式，直接复制到Word会显示为乱码。使用 AI转换助手 可以快速将 LaTeX 公式转换为 Word 文档，只需粘贴AI生成的内容，点击转换，即可下载排版工整的Word文档。" },
-          { id: 590, categoryId: 3, title: "如何在线将 LaTeX 公式转换为 Word 文档？", answer: "打开 AI转换助手 官网（www.aitoword.chat），将 LaTeX 公式代码粘贴到输入框，点击转换按钮，即可在线完成 LaTeX 公式转 Word 操作。支持各种复杂的 LaTeX 公式，转换后的 Word 文档中公式可直接编辑。" },
-          { id: 595, categoryId: 3, title: "AI转换助手 支持 LaTeX 表格转 Word 文档吗？", answer: "支持。AI转换助手 不仅可以将 LaTeX 公式转 Word，还可以将 LaTeX 表格、Markdown 表格转换为 Word 可编辑表格，保留行列结构、合并单元格等格式，适用于论文写作、科研报告、策划方案编辑等场景。" },
-          { id: 596, categoryId: 3, title: "如何将 AI 生成的 Markdown 内容转为 Word 文档？", answer: "将 AI 生成的 Markdown 文本粘贴到 AI转换助手 输入框，或直接上传.md文件，点击转换按钮即可生成格式规范的 Word 文档。系统会自动识别 Markdown 语法并转换为 Word 原生格式。" },
-          { id: 51, title: "LaTeX 公式乱码", answer: "AI转换助手 支持所有的 LaTeX 数学公式、物理公式和化学方程式。如果您导出的内容中出现了公式错乱，请联系在线客服反馈给我们，我们会在1个工作日内修复问题。", categoryId: 2 },
-          { id: 89, title: "LaTeX 公式出现虚线方框", answer: "对于某些特殊的数学符号，转换后会出现虚线方框，如果您想要去除这些虚线方框，可先用鼠标点击虚线方框，然后使用键盘输入空格即可。", categoryId: 2 },
-          { id: 4, title: "小程序端预览文件时，公式不显示", answer: "微信小程序端预览文件时，可能会出现公式无法正常展示的情况，如果您的文件中包含公式，请使用WPS预览文件，或将文件分享到电脑端进行预览。详情请咨询客服。", categoryId: 2 },
-          { id: 3, title: "转换成 Excel 文件无内容", answer: "AI转换助手 会自动匹配文案中的表格，如果您的文案中不包含表格，或文案格式不标准，则可能会导致生成的文件内容为空。", categoryId: 2 },
-          { id: 5, title: "Html 格式文案转换异常", answer: "AI转换助手 默认支持的文案格式为 Markdown，Html 格式的文案会导致转换异常，由此，建议您与 AI 对话时，不要要求 AI 以 Html 的格式回复内容。", categoryId: 2 },
-          { id: 6, title: "Mermaid 流程图生成失败", answer: "请优先检查您的数据格式，数据格式错误是导致流程图无法正常生成的主要原因。AI转换助手会自动帮您修复常见的格式问题，对于少量不太常见的格式问题，可联系在线客服进行处理。", categoryId: 2 },
-          { id: 4, title: "隐私保护相关", answer: "AI转换助手 承诺保护您的隐私，仅在必要情况下，您在 AI转换助手 中产生的文件和数据会进行加密存储，且您随时可以永久删除这些文件和数据。", categoryId: 3 },
-          { id: 40, title: "DeepSeek网页端用户", answer: "1.与DeepSeek对话并生成文案内容。\n2.点击文案下方DeepSeek自带的复制按钮（注意：不要全选复制或长按复制，这样做可能会导致文案格式异常）\n3.将文案粘贴到AI转换助手，导出为Word或Pdf文档。", categoryId: 1 },
-          { id: 41, title: "DeepSeek、文心手机端用户", answer: "1.与DeepSeek对话并生成文案内容（请在对话中添加这段话——'请使用markdown格式返回内容，并使用markdown标签包裹内容'）\n2.点击markdown文案右上方的复制按钮（注意：不要全选复制或长按复制，这样做可能会导致文案格式异常）\n3.将文案粘贴到AI转换助手，导出为Word或Pdf文档。", categoryId: 1 },
-          { id: 42, title: "豆包网页端用户", answer: "1.与豆包对话并生成文案内容。\n2.点击文案上方豆包自带的下载-Markdown按钮（注意：不要全选复制或长按复制，这样做可能会导致文案格式异常），将后缀为.md的文件下载到电脑中。\n3.打开.md文件，复制文件中的全部内容。\n4.将内容粘贴到AI转换助手，导出为Word或Pdf文档。", categoryId: 1 },
-          { id: 43, title: "豆包手机端用户", answer: "1.与豆包对话并生成文案内容。\n2.点击文案下方的分享按钮，选择导出文件-TXT文件，点击导出按钮。\n3.豆包会自动打开.txt文件，请选择并复制文件中的内容。\n4.将内容粘贴到AI转换助手，导出为Word或Pdf文档。", categoryId: 1 },
-          { id: 48, categoryId: 1, title: "Gemini、GPT、Grok手机端用户", answer: "1.与Gemini、GPT、Grok对话并生成文案内容（请在对话中添加这段话——“请使用markdown格式返回内容，并使用markdown标签包裹内容”）\n2.文案生成好后，点击markdown文案右上方的复制按钮（注意：不要全选复制或长按复制，这样做可能会导致文案格式异常）\n3.将文案粘贴到AI转换助手，点击导出为Word或Pdf文档按钮。" }
+          { id: 592, categoryId: 3, title: "AI2Word 可以做什么？", answer: "AI2Word 可将DeepSeek、豆包、Kimi、Gemini等AI生成的LaTeX公式、表格、Markdown文本一键转为Word、PDF、Excel，解决复制乱码问题。" },
+          { id: 591, categoryId: 3, title: "AI生成的公式如何复制到Word？", answer: "AI工具生成的公式多为LaTeX格式，直接复制会乱码。使用AI2Word粘贴内容，点击转换即可下载排版工整的Word文档。" },
+          { id: 590, categoryId: 3, title: "如何在线将LaTeX公式转Word？", answer: "访问AI2Word官网，将LaTeX代码粘贴到输入框，点击转换即可。支持复杂公式，转换后可编辑。" },
+          { id: 595, categoryId: 3, title: "支持LaTeX表格转Word吗？", answer: "支持。LaTeX表格、Markdown表格均可转换为Word可编辑表格，保留合并单元格等结构。" },
+          { id: 596, categoryId: 3, title: "Markdown内容如何转Word？", answer: "粘贴Markdown文本或上传.md文件，AI2Word自动识别语法并生成规范Word文档。" },
+          { id: 51, title: "LaTeX公式乱码", answer: "AI2Word支持全部LaTeX数学/物理/化学公式。若出现乱码，请联系客服，1个工作日内修复。", categoryId: 2 },
+          { id: 89, title: "公式出现虚线方框", answer: "部分特殊符号转换后出现虚线框，点击虚线框后按空格即可去除。", categoryId: 2 },
+          { id: 4, title: "小程序预览公式不显示", answer: "微信小程序预览可能无法显示公式，建议使用WPS预览或分享到电脑端查看。", categoryId: 2 },
+          { id: 3, title: "转换成Excel无内容", answer: "AI2Word自动匹配表格，若文案不含标准表格可能导致空文件。", categoryId: 2 },
+          { id: 5, title: "Html格式文案转换异常", answer: "AI2Word默认支持Markdown，Html格式可能导致异常，建议对话时要求AI以Markdown回复。", categoryId: 2 },
+          { id: 6, title: "Mermaid流程图生成失败", answer: "请检查Mermaid语法，AI2Word会自动修复常见格式问题。", categoryId: 2 },
+          { id: 40, title: "DeepSeek网页端用户", answer: "1.与DeepSeek对话生成内容。\n2.点击DeepSeek自带的复制按钮（不要全选）。\n3.粘贴到AI2Word导出Word/PDF。", categoryId: 1 },
+          { id: 41, title: "DeepSeek手机端用户", answer: "1.对话时要求“使用markdown格式返回并用markdown标签包裹”。\n2.点击markdown区块右上角复制。\n3.粘贴到AI2Word导出。", categoryId: 1 },
+          { id: 48, title: "Gemini/GPT手机端用户", answer: "1.对话时要求“使用markdown格式返回并用markdown标签包裹”。\n2.点击复制按钮。\n3.粘贴到AI2Word导出。", categoryId: 1 }
         ],
-        categories: [{ id: 1, title: "操作指南" }, { id: 2, title: "文件转换问题" }, { id: 3, title: "功能介绍" }, { id: 4, title: "AI转换助手福利" }]
+        categories: [{ id: 1, title: "操作指南" }, { id: 2, title: "文件转换问题" }, { id: 3, title: "功能介绍" }]
       };
-      const container = document.getElementById('faq-accordion');
-      if (container) {
+      const container = document.getElementById('faq-modern-container');
+      if(container) {
         const catMap = new Map();
         faqData.categories.forEach(c => catMap.set(c.id, { title: c.title, items: [] }));
-        faqData.questions.forEach(q => {
-          const cat = catMap.get(q.categoryId);
-          if (cat) cat.items.push(q);
-        });
-        let html = '<div class="faq-columns">';
-        for (let [id, cat] of catMap.entries()) {
-          if (cat.items.length === 0) continue;
-          html += `<div class="faq-cat-card"><div class="faq-cat-title">${escapeHtml(cat.title)}</div><div class="faq-list">`;
+        faqData.questions.forEach(q => { if(catMap.has(q.categoryId)) catMap.get(q.categoryId).items.push(q); });
+        let html = '<div class="faq-two-columns">';
+        for(let cat of catMap.values()) {
+          if(cat.items.length === 0) continue;
+          html += `<div class="faq-category-block"><div class="category-title">${cat.title}</div>`;
           cat.items.forEach(item => {
-            let answerHtml = escapeHtml(item.answer).replace(/\n/g, '<br>');
-            html += `<div class="faq-q-item"><div class="faq-q">${escapeHtml(item.title)}</div><div class="faq-a">${answerHtml}</div></div>`;
+            html += `<div class="faq-entry"><div class="faq-question"><i class="fas fa-question-circle"></i> ${item.title}</div><div class="faq-answer">${item.answer.replace(/\n/g,'<br>')}</div></div>`;
           });
-          html += `</div></div>`;
+          html += '</div>';
         }
         html += '</div>';
         container.innerHTML = html;
       }
-      function escapeHtml(str) { if (!str) return ''; return str.replace(/[&<>]/g, function (m) { if (m === '&') return '&amp;'; if (m === '<') return '&lt;'; if (m === '>') return '&gt;'; return m; }); }
     })();
   </script>
 </body>
-
 </html>
