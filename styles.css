@@ -259,7 +259,9 @@ a {
 }
 
 .file-badge {
+  display: flex;
   background: #2a2a2a;
+  gap: 12px;
   padding: 12px 24px;
   border-radius: 60px;
   font-weight: 600;
@@ -791,6 +793,12 @@ a {
   display: block;
   color: #a0a0a0;
   margin-bottom: 12px;
+}
+
+.preview-body-img {
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
 }
 
 .copyright-bar {
