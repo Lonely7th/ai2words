@@ -1,49 +1,764 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta property="og:title" content="AI2Word - AI对话转Word专家" />
+  <!-- SEO & Open Graph (English) -->
+  <meta property="og:title" content="AI2Word – AI to Word, LaTeX & Markdown Converter" />
   <meta property="og:description"
-    content="AI2Word —— 专注AI对话转Word、Markdown转Word、LaTeX转Word。兼容DeepSeek、豆包、ChatGPT、Gemini等主流AI，公式、Mermaid图完美保留。隐私安全，多端通用。" />
+    content="AI2Word: Convert AI chats, LaTeX formulas, and Markdown to Word/PDF/Excel. Works with DeepSeek, ChatGPT, Gemini, Doubao & more. Perfect formatting, privacy first." />
   <meta property="og:site_name" content="AI2Word" />
   <meta property="og:url" content="https://www.ai2word.chat/" />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="zh_CN" />
-  <meta name="keywords" content="AI2Word,AI对话转Word,LaTeX转Word,Markdown转Word,AI内容转PDF,AI导出Word" />
-  <link rel="canonical" href="https://www.ai2word.chat/" />
-  <title>AI2Word - AI转Word | LaTeX转Word | Markdown一键导出</title>
+  <meta property="og:locale" content="en_US" />
+  <meta name="keywords"
+    content="AI2Word, AI to Word, LaTeX to Word, Markdown to Word, AI export, PDF converter, Mermaid to Word" />
+  <link rel="canonical" href="https://www.ai2word.chat/en" />
+  <title>AI2Word – AI to Word | LaTeX & Markdown Export</title>
   <meta name="description"
-    content="AI2Word官网，AI2Word可以将DeepSeek、豆包、ChatGPT、Gemini等AI生成的对话、LaTeX公式、Mermaid图完美转为Word/PDF/Excel，排版工整，公式不乱码。隐私安全，多端支持，专家级转换体验。" />
-  <!-- 字体与图标库 -->
+    content="AI2Word converts AI-generated content from DeepSeek, ChatGPT, Doubao, Gemini and more into polished Word, PDF or Excel files. LaTeX math, Mermaid diagrams, tables — all preserved flawlessly." />
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="images/ai2word-logo.png" />
+  <style>
+    /* ===== styles.css – AI2Word Dark Theme · Violet Accent (#766EE9) ===== */
+    :root {
+      --primary: #766EE9;
+      --primary-dark: #5e54c9;
+      --primary-light: #2a2442;
+      --accent: #a99cf0;
+      --gradient-main: linear-gradient(135deg, #766EE9 0%, #5e54c9 100%);
+      --gradient-light: linear-gradient(135deg, #2a2442 0%, #1f1c33 100%);
+      --bg-page: #121212;
+      --bg-soft: #1e1e1e;
+      --bg-card: #1e1e1e;
+      --text-dark: #f0f0f0;
+      --text-muted: #b0b0b0;
+      --border-light: #2a2a2a;
+      --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
+      --shadow-lg: 0 25px 50px -12px rgba(118, 110, 233, 0.2);
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --transition: all 0.2s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 20px 0;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-text {
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      background: #ffffff;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .badge-experimental {
+      background: var(--primary-light);
+      color: #ffffff;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 36px;
+    }
+
+    .main-nav a {
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .main-nav a:hover {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-header-primary {
+      background: var(--gradient-main);
+      color: white;
+      padding: 8px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(118, 110, 233, 0.3);
+    }
+
+    /* hero */
+    .hero-new {
+      padding: 120px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-chip {
+      background: var(--gradient-light);
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+
+    .hero-headline {
+      font-size: 3.4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      background: #ffffff;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 90%;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary-large {
+      background: var(--gradient-main);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-outline-large {
+      border: 1px solid var(--border-light);
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--text-dark);
+    }
+
+    .trust-badge {
+      display: flex;
+      gap: 24px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hero-visual-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+      position: relative;
+    }
+
+    .preview-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 30px;
+      color: var(--text-muted);
+    }
+
+    .preview-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #4a4a4a;
+    }
+
+    .preview-body {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .file-badge {
+      display: flex;
+      background: #2a2a2a;
+      gap: 12px;
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .word-badge {
+      background: var(--gradient-main);
+      color: white;
+    }
+
+    .arrow-animation {
+      font-size: 32px;
+      color: var(--primary);
+    }
+
+    .preview-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .detail-item {
+      background: #252525;
+      padding: 12px 16px;
+      border-radius: 16px;
+      color: var(--text-muted);
+    }
+
+    /* sections */
+    .section-spacing {
+      padding: 90px 0;
+    }
+
+    .bg-soft-gray {
+      background: var(--bg-soft);
+    }
+
+    .bg-gradient-light {
+      background: var(--gradient-light);
+    }
+
+    .section-header-left {
+      margin-bottom: 48px;
+    }
+
+    .section-header-left h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--text-dark);
+    }
+
+    .section-header-left p {
+      color: var(--text-muted);
+    }
+
+    .highlight-badge {
+      background: var(--primary-light);
+      color: #ffffff;
+      font-size: 0.9rem;
+      padding: 4px 14px;
+      border-radius: 60px;
+    }
+
+    .section-header-center {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header-center h2 {
+      font-size: 2.4rem;
+      background: #ffffff;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .section-header-center p {
+      color: var(--text-muted);
+    }
+
+    /* table */
+    .table-wrapper-modern {
+      background: var(--bg-card);
+      border-radius: 28px;
+      padding: 8px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+    }
+
+    .compatibility-table {
+      width: 100%;
+      border-collapse: collapse;
+      color: var(--text-dark);
+    }
+
+    .compatibility-table th {
+      text-align: left;
+      padding: 18px 20px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .compatibility-table td {
+      padding: 14px 20px;
+      border-top: 1px solid #2a2a2a;
+    }
+
+    .badge-full {
+      background: #1e3a2f;
+      color: #6ee7b7;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .badge-partial {
+      background: #3d2e0a;
+      color: #fde047;
+      padding: 4px 12px;
+      border-radius: 40px;
+    }
+
+    .table-note {
+      margin-top: 20px;
+      color: var(--text-muted);
+    }
+
+    /* plugins */
+    .plugin-showcase {
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 30px;
+    }
+
+    .plugin-featured {
+      background: var(--bg-card);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-light);
+    }
+
+    .plugin-icon-large {
+      font-size: 48px;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 24px;
+    }
+
+    .plugin-featured h3 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .plugin-featured p {
+      color: var(--text-muted);
+    }
+
+    .plugin-link {
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 24px;
+      display: inline-block;
+    }
+
+    .plugin-mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .plugin-mini-card {
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+
+    .plugin-mini-card span {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    .plugin-mini-card a {
+      color: var(--primary);
+    }
+
+    /* platforms */
+    .platforms-dual {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 50px;
+    }
+
+    .platforms-content h2 {
+      color: var(--text-dark);
+    }
+
+    .platforms-desc {
+      color: var(--text-muted);
+    }
+
+    .platform-icons {
+      display: flex;
+      gap: 24px;
+      margin: 28px 0;
+    }
+
+    .pf-item {
+      background: var(--bg-card);
+      padding: 10px 22px;
+      border-radius: 60px;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+      color: var(--text-dark);
+      border: 1px solid var(--border-light);
+    }
+
+    .qr-panel-new {
+      background: var(--bg-card);
+      border-radius: 40px;
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+      border: 1px solid var(--border-light);
+    }
+
+    .qr-header {
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .qr-duo {
+      display: flex;
+      justify-content: center;
+      margin: 32px 0;
+    }
+
+    .qr-block img {
+      width: 210px;
+      border-radius: 28px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      margin-bottom: 16px;
+      background: white;
+      padding: 8px;
+    }
+
+    .appstore-link {
+      background: var(--gradient-main);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 600;
+      display: inline-block;
+      box-shadow: 0 8px 16px rgba(118, 110, 233, 0.3);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .benefit-card {
+      background: var(--bg-card);
+      border-radius: 28px;
+      padding: 36px 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .benefit-icon {
+      font-size: 36px;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 24px;
+    }
+
+    .keyword-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .keyword-strip span {
+      background: var(--primary-light);
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    /* FAQ */
+    .faq-two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .faq-category-block {
+      background: var(--bg-card);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .category-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      border-left: 6px solid var(--primary);
+      padding-left: 18px;
+      margin-bottom: 28px;
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .faq-entry {
+      margin-bottom: 24px;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      color: var(--text-dark);
+    }
+
+    .faq-answer {
+      color: var(--text-muted);
+      padding-left: 28px;
+      font-size: 0.9rem;
+    }
+
+    /* support */
+    .support-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .support-link-btn {
+      border: 1px solid var(--border-light);
+      padding: 10px 24px;
+      border-radius: 60px;
+      font-weight: 500;
+      background: var(--bg-card);
+      color: var(--text-dark);
+    }
+
+    .social-connect-card {
+      background: var(--bg-soft);
+      border-radius: 32px;
+      padding: 36px;
+      border: 1px solid var(--border-light);
+    }
+
+    .wechat-hover-trigger {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .wechat-qr-pop {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 140px;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.2s;
+      background: var(--bg-card);
+      padding: 12px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-light);
+    }
+
+    .wechat-hover-trigger:hover .wechat-qr-pop {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .wechat-qr-pop img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .footer-new {
+      background: #0a0a0a;
+      color: #a0a0a0;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copyright-bar {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #2a2a2a;
+      margin-top: 20px;
+    }
+
+    .preview-body-img {
+      border-radius: 6px;
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (max-width: 1024px) {
+
+      .hero-grid,
+      .platforms-dual,
+      .support-split,
+      .plugin-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .main-nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-two-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- 头部：橙色渐变 -->
   <header class="site-header">
     <div class="container header-container">
       <div class="brand-area">
-        <img src="images/ai2word-logo.png" style="width: 40px; height: 40px;" />
+        <img src="images/ai2word-logo.png" style="width: 40px; height: 40px;" alt="AI2Word logo" />
         <div class="logo-text">AI2Word</div>
-        <span class="badge-experimental">专业版</span>
+        <span class="badge-experimental">PRO</span>
       </div>
       <nav class="main-nav">
-        <a href="#features">产品优势</a>
-        <a href="#platforms">下载APP</a>
-        <a href="#plugins">安装插件</a>
-        <a href="#support">帮助中心</a>
+        <a href="#features">Features</a>
+        <a href="#platforms">Download</a>
+        <a href="#plugins">Plugins</a>
+        <a href="#support">Support</a>
       </nav>
       <div class="header-actions">
-        <a href="https://www.aiwhaler.com/" class="btn-header-primary" target="_blank" rel="noreferrer">在线使用 <i
+        <a href="https://www.aiwhaler.com/" class="btn-header-primary" target="_blank" rel="noreferrer">Web App <i
             class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -54,18 +769,18 @@
     <section class="hero-new">
       <div class="container hero-grid">
         <div class="hero-text">
-          <div class="hero-chip"><i class="fas fa-bolt"></i> AI2Word - 专注AI内容导出 · 格式精准还原</div>
-          <h1 class="hero-headline">AI对话转Word<br>像复制粘贴一样简单</h1>
-          <p class="hero-sub">支持DeepSeek、豆包、ChatGPT、Kimi等大部分主流AI平台。LaTeX数学公式、化学方程式、Mermaid图表无损转换，保留全部排版。
-          </p>
+          <div class="hero-chip"><i class="fas fa-bolt"></i> AI2Word · Export AI content with precision</div>
+          <h1 class="hero-headline">AI chat to Word<br>as simple as copy & paste</h1>
+          <p class="hero-sub">Works with DeepSeek, ChatGPT, Doubao, Gemini, Kimi and more. LaTeX math, chemical
+            equations, Mermaid diagrams — converted losslessly. All formatting preserved.</p>
           <div class="hero-actions">
             <a href="https://www.aiwhaler.com/" class="btn-primary-large" target="_blank" rel="noreferrer"><i
-                class="fas fa-cloud-upload-alt"></i> 网页端在线转换</a>
-            <a href="#download" class="btn-outline-large"><i class="fas fa-mobile-alt"></i> 下载 App</a>
+                class="fas fa-cloud-upload-alt"></i> Online Converter</a>
+            <a href="#download" class="btn-outline-large"><i class="fas fa-mobile-alt"></i> Download App</a>
           </div>
           <div class="trust-badge">
-            <span><i class="fas fa-check-circle"></i> 已为10万+用户提升效率</span>
-            <span><i class="fas fa-shield-alt"></i> 100%数据加密保护</span>
+            <span><i class="fas fa-check-circle"></i> Trusted by 100k+ users</span>
+            <span><i class="fas fa-shield-alt"></i> End-to-end encryption</span>
           </div>
         </div>
         <div class="hero-visual-card">
@@ -74,259 +789,261 @@
               <span class="preview-dot"></span>
               <span class="preview-dot"></span>
               <span class="preview-dot"></span>
-              <span>AI2Word · 专家级的 AI 文案导出工具</span>
+              <span>AI2Word · Professional AI export toolkit</span>
             </div>
             <div class="preview-body">
               <div class="file-badge">
-                <img class="preview-body-img" src="images/lowcode-2411744.png" />
-                <img class="preview-body-img" src="images/lowcode-2411736.png" />
-                <img class="preview-body-img" src="images/lowcode-2421671.png" />
-                <img class="preview-body-img" src="images/lowcode-2421670.jpg" />
+                <img class="preview-body-img" src="images/lowcode-2411744.png" alt="ai" />
+                <img class="preview-body-img" src="images/lowcode-2411736.png" alt="ai" />
+                <img class="preview-body-img" src="images/lowcode-2421671.png" alt="ai" />
+                <img class="preview-body-img" src="images/lowcode-2421670.jpg" alt="ai" />
               </div>
               <div class="arrow-animation"><i class="fas fa-long-arrow-alt-right"></i></div>
               <div class="file-badge word-badge">Word / PDF / Excel</div>
             </div>
             <div class="preview-detail">
-              <div class="detail-item"><i class="fas fa-square-root-alt"></i> LaTeX公式: <code>E = mc^2</code> → 完美渲染
-              </div>
-              <div class="detail-item"><i class="fas fa-project-diagram"></i> Mermaid流程图: 自动识别，一键转换</div>
-              <div class="detail-item"><i class="fas fa-table"></i> 表格样式: 保留合并单元格，兼容表格内公式</div>
+              <div class="detail-item"><i class="fas fa-square-root-alt"></i> LaTeX: <code>E = mc^2</code> → flawless
+                rendering</div>
+              <div class="detail-item"><i class="fas fa-project-diagram"></i> Mermaid diagrams: auto-detected, one-click
+                convert</div>
+              <div class="detail-item"><i class="fas fa-table"></i> Tables: merged cells & formulas preserved</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 兼容性测评 -->
+    <!-- Compatibility -->
     <section id="compatibility" class="section-spacing bg-soft-gray">
       <div class="container">
         <div class="section-header-left">
-          <h2>主流AI平台兼容性测评 <span class="highlight-badge">实时更新</span></h2>
-          <p>截止2026.04 · AI2Word 针对各大 AI 平台 Markdown 导出能力深度测评，专业团队持续优化。</p>
+          <h2>AI platform compatibility <span class="highlight-badge">Live updated</span></h2>
+          <p>As of April 2026 · AI2Word deep‑dive evaluation of major AI platforms. Continuously optimized.</p>
         </div>
         <div class="table-wrapper-modern">
           <table class="compatibility-table">
             <thead>
               <tr>
-                <th>AI平台</th>
-                <th>Markdown(无公式)</th>
-                <th>Markdown(有公式)</th>
-                <th>Mermaid图</th>
-                <th>复杂表格</th>
+                <th>AI Platform</th>
+                <th>Markdown (plain)</th>
+                <th>Markdown (with LaTeX)</th>
+                <th>Mermaid</th>
+                <th>Complex tables</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>DeepSeek</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
               <tr>
-                <td>豆包</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td>Doubao</td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
               <tr>
                 <td>Kimi</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-partial">部分支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-partial">Partial</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
               <tr>
-                <td>通义千问</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td>Tongyi Qianwen</td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
               <tr>
-                <td>智谱清言</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-partial">部分支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td>Zhipu AI</td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-partial">Partial</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
               <tr>
                 <td>ChatGPT</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
               <tr>
                 <td>Gemini</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
               <tr>
                 <td>Grok</td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-partial">部分支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
-                <td><span class="badge-full">完全支持</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-partial">Partial</span></td>
+                <td><span class="badge-full">Full Support</span></td>
+                <td><span class="badge-full">Full Support</span></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="table-note"><i class="fas fa-flask"></i> 测评基于 AI2Word 转换引擎v3.0，持续适配最新 AI 输出格式。</p>
+        <p class="table-note"><i class="fas fa-flask"></i> Based on AI2Word conversion engine v3.0 — always up to date.
+        </p>
       </div>
     </section>
 
-    <!-- 插件生态 -->
+    <!-- Plugins -->
     <section id="plugins" class="section-spacing">
       <div class="container">
         <div class="section-header-center">
-          <h2>丰富的浏览器插件生态</h2>
-          <p>针对主流 AI 平台推出了专用插件，更轻量化，兼容性更强</p>
+          <h2>Rich browser extension ecosystem</h2>
+          <p>Dedicated plugins for major AI platforms — lightweight & seamless</p>
         </div>
         <div class="plugin-showcase">
           <div class="plugin-featured">
-            <div class="plugin-icon-large"><img src="images/ai2word-logo.png" alt="AI2Word多端展示"
+            <div class="plugin-icon-large"><img src="images/ai2word-logo.png" alt="AI2Word"
                 style="width: 72px; height: 72px;" /></div>
-            <h3>AI2Word 通用插件</h3>
-            <p>一键将AI Markdown、LaTeX公式转为Word/PDF/Excel，适配DeepSeek、豆包、ChatGPT、Gemini等大部分主流AI。</p>
-            <a href="https://www.aiwhaler.com/plugin/" class="plugin-link" target="_blank">安装插件 <i
+            <h3>AI2Word Universal Plugin</h3>
+            <p>One-click export AI Markdown & LaTeX to Word/PDF/Excel. Compatible with DeepSeek, ChatGPT, Doubao, Gemini
+              and more.</p>
+            <a href="https://www.aiwhaler.com/plugin/" class="plugin-link" target="_blank">Install extension <i
                 class="fas fa-external-link-alt"></i></a>
           </div>
           <div class="plugin-mini-grid">
             <div class="plugin-mini-card">
-              <img src="images/lowcode-2411744.png" alt="AI2Word多端展示" style="width: 40px; height: 40px;" />
-              <span>DeepSeek 专用插件</span>
-              <a href="https://deepseek.aiwhaler.com/" target="_blank">安装插件 →</a>
+              <img src="images/lowcode-2411744.png" alt="DeepSeek" style="width: 40px; height: 40px;" />
+              <span>DeepSeek Plugin</span>
+              <a href="https://deepseek.aiwhaler.com/" target="_blank">Install →</a>
             </div>
             <div class="plugin-mini-card">
-              <img src="images/lowcode-2411736.png" alt="AI2Word多端展示"
-                style="width: 40px; height: 40px; border-radius: 6px;" />
-              <span>豆包 专用插件</span>
-              <a href="https://doubao.aiwhaler.com/" target="_blank">安装插件 →</a>
+              <img src="images/lowcode-2411736.png" alt="Doubao" style="width: 40px; height: 40px; border-radius: 6px;" />
+              <span>Doubao Plugin</span>
+              <a href="https://doubao.aiwhaler.com/" target="_blank">Install →</a>
             </div>
             <div class="plugin-mini-card">
-              <img src="images/lowcode-2421671.png" alt="AI2Word多端展示" style="width: 40px; height: 40px;" />
-              <span>Gemini 专用插件</span>
-              <a href="https://gemini.aiwhaler.com/" target="_blank">安装插件 →</a>
+              <img src="images/lowcode-2421671.png" alt="Gemini" style="width: 40px; height: 40px;" />
+              <span>Gemini Plugin</span>
+              <a href="https://gemini.aiwhaler.com/" target="_blank">Install →</a>
             </div>
             <div class="plugin-mini-card">
-              <img src="images/lowcode-2421670.jpg" alt="AI2Word多端展示"
-                style="width: 40px; height: 40px; border-radius: 6px;" />
-              <span>ChatGPT 专用插件</span>
-              <a href="https://chatgpt.aiwhaler.com/" target="_blank">安装插件 →</a>
+              <img src="images/lowcode-2421670.jpg" alt="ChatGPT" style="width: 40px; height: 40px; border-radius: 6px;" />
+              <span>ChatGPT Plugin</span>
+              <a href="https://chatgpt.aiwhaler.com/" target="_blank">Install →</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 全端支持 + App下载 -->
+    <!-- Platforms + App -->
     <section id="platforms" class="section-spacing bg-gradient-light">
       <div class="container platforms-dual">
         <div class="platforms-content">
-          <h2>多端支持，满足您对不同场景的使用需求</h2>
-          <p class="platforms-desc">网页端、手机App、浏览器插件——无论您使用哪种设备，AI2Word都能提供一致的转换体验，多端数据共享，轻松一键转发。</p>
+          <h2>Multi‑platform, ready for any scenario</h2>
+          <p class="platforms-desc">Web app, mobile app, browser extensions — AI2Word delivers a consistent experience.
+            Sync across devices, share with one click.</p>
           <div class="platform-icons">
-            <div class="pf-item"><i class="fas fa-laptop"></i> 网页版</div>
-            <div class="pf-item"><i class="fab fa-apple"></i> App</div>
-            <div class="pf-item"><i class="fas fa-puzzle-piece"></i> 插件</div>
+            <div class="pf-item"><i class="fas fa-laptop"></i> Web</div>
+            <div class="pf-item"><i class="fab fa-apple"></i> iOS / Android</div>
+            <div class="pf-item"><i class="fas fa-puzzle-piece"></i> Extensions</div>
           </div>
-          <img class="platform-mockup" src="images/lowcode-2451411.png" alt="AI2Word多端展示"
+          <img class="platform-mockup" src="images/lowcode-2451411.png" alt="AI2Word multi‑platform"
             style="max-width:80%; border-radius:24px; margin-top:24px;" />
         </div>
         <div id="download" class="qr-panel-new">
           <div class="qr-header">
             <i class="fas fa-qrcode"></i>
-            <span>下载 AI2Word App</span>
+            <span>Download AI2Word App</span>
           </div>
-          <p>扫描二维码下载 AI2Word 手机App，AI文案转换再提效。</p>
+          <p>Scan the QR code to get the mobile app. Boost your productivity on the go.</p>
           <div class="qr-duo">
             <div class="qr-block">
-              <img src="images/lowcode-2421672.png" alt="AI2Word App" />
+              <img src="images/lowcode-2421672.png" alt="AI2Word App QR" />
             </div>
           </div>
           <div class="qr-footer-note">
             <a href="https://apps.apple.com/cn/app/ai2word-ai%E8%BD%AC%E6%8D%A2%E5%8A%A9%E6%89%8B/id6753907237"
-              target="_blank" class="appstore-link">App Store 下载 <i class="fas fa-external-link-alt"></i></a>
+              target="_blank" class="appstore-link">App Store <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 产品优势 -->
+    <!-- Features -->
     <section id="features" class="section-spacing">
       <div class="container">
         <div class="section-header-center">
-          <h2>为什么选择 AI2Word ？</h2>
+          <h2>Why choose AI2Word?</h2>
         </div>
         <div class="benefits-grid">
           <div class="benefit-card">
             <div class="benefit-icon"><i class="fas fa-lock"></i></div>
-            <h3>数据安全</h3>
-            <p>内置无痕模式，您的任何操作和数据都不会被存储或转发，完全安心使用。</p>
+            <h3>Privacy first</h3>
+            <p>Incognito mode built‑in. Your data is never stored or forwarded. Complete peace of mind.</p>
           </div>
           <div class="benefit-card">
             <div class="benefit-icon"><i class="fas fa-headset"></i></div>
-            <h3>专家全程支持</h3>
-            <p>专业技术团队7X24小时在线响应，疑难格式、特殊公式，1对1协助解决。</p>
+            <h3>Expert support</h3>
+            <p>24/7 technical assistance. Complex formatting or special equations? We’ve got you covered.</p>
           </div>
           <div class="benefit-card">
             <div class="benefit-icon"><i class="fas fa-sync-alt"></i></div>
-            <h3>持续升级</h3>
-            <p>紧跟 AI 平台更新，每月迭代，确保最新版 Markdown / LaTeX 完美兼容。</p>
+            <h3>Continuous updates</h3>
+            <p>Monthly iterations keep pace with AI platform changes. Always the latest compatibility.</p>
           </div>
           <div class="benefit-card">
             <div class="benefit-icon"><i class="fas fa-mobile-alt"></i></div>
-            <h3>多端可用</h3>
-            <p>网页 / App / 浏览器插件全支持，再也不用担心不同设备无法使用的问题。</p>
+            <h3>Cross‑device</h3>
+            <p>Web, mobile, browser extensions — never worry about device limitations again.</p>
           </div>
         </div>
         <div class="keyword-strip">
-          <span>AI2Word官网</span><span>AI对话转Word</span><span>LaTeX转Word</span><span>Markdown转Word</span><span>AI内容转PDF</span><span>支持Mermaid图表</span><span>AI转表格</span>
+          <span>AI to Word</span><span>LaTeX to Word</span><span>Markdown converter</span><span>AI export</span><span>Mermaid to Word</span><span>AI tables</span><span>Privacy safe</span>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ (English) -->
     <section id="faq" class="section-spacing bg-soft-gray">
       <div class="container">
         <div class="section-header-left">
-          <h2>常见问题 · 功能介绍</h2>
-          <p>AI2Word 核心功能与高频问题解答</p>
+          <h2>FAQs & features</h2>
+          <p>Everything you need to know about AI2Word</p>
         </div>
         <div id="faq-modern-container" class="faq-modern-grid"></div>
       </div>
     </section>
 
-    <!-- 支持团队 -->
+    <!-- Support -->
     <section id="support" class="section-spacing">
       <div class="container support-split">
         <div class="support-info">
-          <h2>专业技术团队7X24小时提供支持</h2>
-          <p>为了提升您的使用效率，我们一直在努力。遇到任何问题，都可以直接联系我们</p>
+          <h2>24/7 expert technical support</h2>
+          <p>We're here to help you work smarter. Reach out anytime — we respond fast.</p>
           <div class="support-links-group">
-            <a href="https://www.aiwhaler.com/help/" class="support-link-btn" target="_blank"><i
-                class="fas fa-book"></i> 帮助中心</a>
+            <a href="https://www.aiwhaler.com/help/" class="support-link-btn" target="_blank"><i class="fas fa-book"></i>
+              Help Center</a>
             <a href="https://www.aiwhaler.com/ua/" class="support-link-btn" target="_blank"><i
-                class="fas fa-file-contract"></i> 用户协议</a>
+                class="fas fa-file-contract"></i> Terms</a>
             <a href="https://www.aiwhaler.com/pp/" class="support-link-btn" target="_blank"><i
-                class="fas fa-shield-alt"></i> 隐私政策</a>
+                class="fas fa-shield-alt"></i> Privacy</a>
           </div>
         </div>
         <div class="social-connect-card">
-          <h3><i class="fas fa-share-alt"></i> 关注AI2Word</h3>
+          <h3><i class="fas fa-share-alt"></i> Connect with AI2Word</h3>
           <div class="social-links-row">
-            <a href="https://www.zhihu.com/people/33-44-73-12-10" target="_blank">知乎</a>
-            <span class="wechat-hover-trigger"> <i class="fab fa-weixin"></i> 公众号
+            <a href="https://www.zhihu.com/people/33-44-73-12-10" target="_blank">Zhihu</a>
+            <span class="wechat-hover-trigger"> <i class="fab fa-weixin"></i> WeChat
               <span class="wechat-qr-pop"><img
                   src="https://seekservice-9gkeeztlfcb2a6d4-1301441002.tcloudbaseapp.com/resources/2025-12/lowcode-2403880"
-                  alt="公众号二维码" /></span>
+                  alt="WeChat QR" /></span>
             </span>
             <a href="https://www.xiaohongshu.com/user/profile/64b5fb93000000000b014f78?xsec_token=YBs9EIHtVuIMv2UWOAIHM7QhzUi7QojCZ7lUKYCObpTHU="
-              target="_blank"><i class="fab fa-xiaohongshu"></i> 小红书</a>
+              target="_blank"><i class="fab fa-xiaohongshu"></i> RedNote</a>
           </div>
           <div class="email-line"><i class="fas fa-envelope"></i> aiwhaler@yeah.net</div>
         </div>
@@ -337,56 +1054,59 @@
   <footer class="footer-new">
     <div class="container footer-grid">
       <div class="footer-col">
-        <div class="footer-logo"><img src="images/ai2word-logo.png" alt="AI2Word多端展示"
-            style="width: 32px; height: 32px;" /> AI2Word</div>
-        <p>专家级的 AI 文案导出工具</p>
-        <p>解决 AI 文案复制到 Word 乱码问题</p>
+        <div class="footer-logo"><img src="images/ai2word-logo.png" alt="logo" style="width: 32px; height: 32px;" />
+          AI2Word</div>
+        <p>Professional AI export toolkit</p>
+        <p>Fix AI formatting when pasting into Word</p>
       </div>
       <div class="footer-col">
-        <h4>产品</h4>
-        <a href="#features">产品优势</a><a href="#platforms">下载APP</a><a href="#plugins">安装插件</a>
+        <h4>Product</h4>
+        <a href="#features">Features</a><a href="#platforms">Download</a><a href="#plugins">Plugins</a>
       </div>
       <div class="footer-col">
-        <h4>支持</h4>
-        <a href="https://www.aiwhaler.com/help/" target="_blank">帮助中心</a><a href="https://www.aiwhaler.com/ua/"
-          target="_blank">用户协议</a><a href="https://www.aiwhaler.com/pp/" target="_blank">隐私政策</a>
+        <h4>Support</h4>
+        <a href="https://www.aiwhaler.com/help/" target="_blank">Help Center</a>
+        <a href="https://www.aiwhaler.com/ua/" target="_blank">Terms</a>
+        <a href="https://www.aiwhaler.com/pp/" target="_blank">Privacy</a>
       </div>
       <div class="footer-col">
-        <h4>社媒</h4>
-        <a href="https://www.zhihu.com/people/33-44-73-12-10" target="_blank">知乎</a><a
-          href="https://www.xiaohongshu.com/user/profile/64b5fb93000000000b014f78?xsec_token=YBs9EIHtVuIMv2UWOAIHM7QhzUi7QojCZ7lUKYCObpTHU="
-          target="_blank">小红书</a><a
-          href="https://www.douyin.com/user/MS4wLjABAAAABp8XqktGdCTIBd9gexYpg2AvXDGUhnJkmkj9J9zhR7GNMPfJEsQixwJRlf9d10Ah"
-          target="_blank">抖音</a>
+        <h4>Social</h4>
+        <a href="https://www.zhihu.com/people/33-44-73-12-10" target="_blank">Zhihu</a>
+        <a href="https://www.xiaohongshu.com/user/profile/64b5fb93000000000b014f78?xsec_token=YBs9EIHtVuIMv2UWOAIHM7QhzUi7QojCZ7lUKYCObpTHU="
+          target="_blank">RedNote</a>
+        <a href="https://www.douyin.com/user/MS4wLjABAAAABp8XqktGdCTIBd9gexYpg2AvXDGUhnJkmkj9J9zhR7GNMPfJEsQixwJRlf9d10Ah"
+          target="_blank">TikTok</a>
       </div>
     </div>
     <div class="copyright-bar">
-      <p>© 2023 - 2026 AI2Word 版权所有 <a href="https://beian.miit.gov.cn/">湘ICP备2024045717号-8</a></p>
+      <p>© 2023 - 2026 AI2Word. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     (function () {
+      // English FAQ data — same structure, fully translated
       const faqData = {
         questions: [
-          { id: 592, categoryId: 3, title: "AI2Word 能实现哪些功能？", answer: "AI2Word 支持将 DeepSeek、豆包、Kimi、Gemini 等 AI 生成的 LaTeX 公式、表格及 Markdown 文本，一键转换为 Word、PDF 或 Excel 文档，彻底解决 AI 直接复制带来的格式错乱问题。" },
-          { id: 591, categoryId: 3, title: "AI 生成的公式如何正确粘贴到 Word？", answer: "AI 工具输出的公式多为 LaTeX 格式，直接复制易出现乱码。只需将内容粘贴至 AI2Word，点击转换按钮即可下载排版工整、可编辑的 Word 文档。" },
-          { id: 590, categoryId: 3, title: "怎样在线将 LaTeX 公式转为 Word？", answer: "访问 AI2Word 官网，将 LaTeX 代码粘贴至输入框，点击转换按钮即可将 LaTeX 公式转为 Word 文档。支持各类复杂公式，转换结果可在 Word 中直接编辑。" },
-          { id: 595, categoryId: 3, title: "是否支持 LaTeX 表格转为 Word？", answer: "支持。LaTeX 表格与 Markdown 表格均可转换为 Word 中的可编辑表格，并完整保留合并单元格等复杂结构。" },
-          { id: 596, categoryId: 3, title: "如何将 Markdown 内容转换为 Word？", answer: "粘贴 Markdown 文本或上传 .md 文件，AI2Word 将自动识别语法并生成格式规范的 Word 文档。" },
-          { id: 4, title: "AI2Word 如何保障我的隐私安全？", answer: "AI2Word 承诺严格保护您的隐私。仅在必要时对您产生的文件与数据进行加密存储，且您可随时永久删除这些内容。", categoryId: 3 },
-          { id: 51, title: "转换后公式出现乱码怎么办？", answer: "AI2Word 全面支持 LaTeX 数学、物理及化学公式。如转换后仍有公式错乱，请联系技术支持进行处理，我们会在 1 个工作日内修复。", categoryId: 2 },
-          { id: 89, title: "公式转换后出现虚线方框如何处理？", answer: "部分特殊数学符号转换后可能显示虚线方框。如需去除，可先用鼠标点击框内，然后按空格键即可消除。", categoryId: 2 },
-          { id: 4, title: "使用预览功能预览文件时公式不显示怎么办？", answer: "为了保证网页的流畅度，在线预览功能仅对少量的公式进行了兼容，如果您的文案中包含复杂公式，可忽略预览的结果，直接导出为Word文档即可看到正常显示的公式了。", categoryId: 2 },
-          { id: 3, title: "生成的 Excel 文件为空怎么解决？", answer: "AI2Word 会自动提取文案中的表格内容。若文案不含表格或表格格式不规范，可能导致 Excel 文件无内容。请检查源内容是否包含标准表格。", categoryId: 2 },
-          { id: 5, title: "为什么 HTML 格式的内容转换异常？", answer: "AI2Word 默认处理 Markdown 格式的文本，HTML 格式会导致转换异常。建议您与 AI 对话时，避免要求其以 HTML 格式输出内容。", categoryId: 2 },
-          { id: 6, title: "Mermaid 流程图生成失败如何排查？", answer: "请优先检查 Mermaid 语法是否正确，格式错误是生成失败的主要原因。AI2Word 会自动修复常见格式问题，若仍无法解决，请联系技术支持进行处理。", categoryId: 2 }
+          { id: 1, categoryId: 3, title: "What can AI2Word do?", answer: "AI2Word converts AI‑generated content (LaTeX formulas, tables, Markdown) from DeepSeek, ChatGPT, Doubao, Gemini, etc. into Word, PDF or Excel. It eliminates formatting chaos when copying from AI chats." },
+          { id: 2, categoryId: 3, title: "How to correctly paste AI formulas into Word?", answer: "AI outputs formulas in LaTeX. Direct copy causes garbled text. Just paste into AI2Word and click convert — you'll get a perfectly formatted, editable Word document." },
+          { id: 3, categoryId: 3, title: "How to convert LaTeX to Word online?", answer: "Visit AI2Word website, paste LaTeX code, and hit convert. Complex equations are fully supported, and the result is directly editable in Word." },
+          { id: 4, categoryId: 3, title: "Does it support LaTeX tables to Word?", answer: "Yes. Both LaTeX and Markdown tables convert to editable Word tables, preserving merged cells and complex structures." },
+          { id: 5, categoryId: 3, title: "How to convert Markdown to Word?", answer: "Paste Markdown text or upload a .md file. AI2Word automatically recognizes syntax and generates a properly styled Word document." },
+          { id: 6, categoryId: 3, title: "How does AI2Word protect my privacy?", answer: "We encrypt files only when necessary, and you can permanently delete your data at any time. No storage or forwarding without your consent." },
+          { id: 7, categoryId: 2, title: "Formulas appear garbled after conversion?", answer: "AI2Word fully supports LaTeX math, physics, and chemistry. If you still see issues, contact support — we fix within 1 business day." },
+          { id: 8, categoryId: 2, title: "Dashed boxes around formulas?", answer: "Some special symbols may show a dashed box. Click inside the box and press spacebar to remove it." },
+          { id: 9, categoryId: 2, title: "Preview doesn't show formulas?", answer: "To keep the preview fast, only a limited number of formulas are rendered online. Ignore the preview — exported Word documents will display formulas perfectly." },
+          { id: 10, categoryId: 2, title: "Exported Excel file is empty?", answer: "AI2Word extracts tables from your content. If no standard table is found, Excel may be blank. Check that your source contains proper tables." },
+          { id: 11, categoryId: 2, title: "HTML content converts incorrectly?", answer: "AI2Word is optimized for Markdown. Avoid asking AI to output HTML format; use Markdown instead." },
+          { id: 12, categoryId: 2, title: "Mermaid diagram fails to generate?", answer: "Check Mermaid syntax first. AI2Word auto‑fixes common issues. If problems persist, contact support." }
         ],
         categories: [
-          { id: 2, title: "文件转换问题" },
-          { id: 3, title: "功能介绍" }
+          { id: 2, title: "Conversion issues" },
+          { id: 3, title: "Features" }
         ]
       };
+
       const container = document.getElementById('faq-modern-container');
       if (container) {
         const catMap = new Map();
