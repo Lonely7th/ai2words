@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ai2word.chat/sitemap.xml
+Sitemap: https://ai2words.vercel.app/sitemap.xml
